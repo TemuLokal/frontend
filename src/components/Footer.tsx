@@ -31,11 +31,9 @@ function Footer() {
                 <li className="flex items-center gap-2">
                   <img src="/mail.svg" alt="icon" className="w-[12px] h-[12px] sm:w-[15px] sm:h-[15px]" />
                   <a href="#email" className="text-[#B8B8B8] hover:text-white text-sm sm:text-base">info@umkm.id</a></li>
-                <li>
                 <li className="flex items-center gap-2">
                   <img src="/phone-call.svg" alt="icon" className="w-[12px] h-[12px] sm:w-[15px] sm:h-[15px]" />
                   <a href="#telp" className="text-[#B8B8B8] hover:text-white text-sm sm:text-base">+62 812 3456 7890</a></li>
-                </li>
                 <li className="flex items-center gap-2">
                   <img src="/map-pin-2.svg" alt="icon" className="w-[12px] h-[12px] sm:w-[15px] sm:h-[15px]" />
                   <a href="#lokasi" className="text-[#B8B8B8] hover:text-white text-sm sm:text-base">Jakarta, Indonesia.</a></li>
