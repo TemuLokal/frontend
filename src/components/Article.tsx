@@ -6,7 +6,7 @@ function Article() {
       title: "Program Pendampingan UMKM 2025 Dibuka",
       description: "Pemerintah membuka program pendampingan gratis untuk UMKM yang ingin naik kelas dan memperluas pasar.",
       date: "13 Oktober 2025",
-      image: "/artikel1.png",
+      image: "/artikel1.webp",
       category: "Berita"
     },
     {
@@ -14,7 +14,7 @@ function Article() {
       title: "UMKM Indonesia Raih Penghargaan Internasional",
       description: "Tiga UMKM Indonesia berhasil meraih penghargaan di ajang kompetisi bisnis tingkat dunia.",
       date: "12 Oktober 2025",
-      image: "/artikel2.png",
+      image: "/artikel2.webp",
       category: "Berita"
     },
     {
@@ -22,7 +22,7 @@ function Article() {
       title: "Tips Meningkatkan Penjualan di Era Digital",
       description: "Strategi marketing digital yang terbukti efektif meningkatkan penjualan UMKM.",
       date: "10 Oktober 2025",
-      image: "/artikel3.png",
+      image: "/artikel3.webp",
       category: "Artikel"
     },
     {
@@ -30,7 +30,7 @@ function Article() {
       title: "Tools Penting yang Wajib Dipelajari UMKM",
       description: "Dalam era digital seperti sekarang, pelaku usaha mikro, kecil, dan menengah wajib menguasai tools berikut.",
       date: "08 Oktober 2025",
-      image: "/artikel4.png",
+      image: "/artikel4.webp",
       category: "Artikel"
     }
   ];

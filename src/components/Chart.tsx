@@ -3,7 +3,7 @@ function Chart({ widthPercent = 0.8, layout = "row" }: { widthPercent?: number; 
   const isColumn = layout === "column";
   
   return (
-    <section className="w-full flex justify-center items-center px-2 sm:px-4 md:px-8">
+    <section className="w-full flex justify-center items-center px-2 sm:px-4 md:px-6">
       <div className="w-full flex justify-center">
         <div
           className={`bg-white rounded-[10px] shadow-xl hover:shadow-2xl transition-shadow duration-300 px-3 sm:px-4 md:px-6 lg:px-16 py-3 md:py-4 lg:py-12 flex ${isColumn ? 'flex-col' : 'flex-col md:flex-row'} justify-between items-stretch gap-3 sm:gap-4 md:gap-4 lg:gap-10 xl:gap-32`}

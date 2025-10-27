@@ -7,7 +7,7 @@ function UMKM() {
       location: "Bekasi, Jawa Barat (4 km)",
       rating: 4.8,
       reviews: 128,
-      image: "/image 1.png",
+      image: "/image 1.webp",
       description: "Pendampingan penanaman lada dan suplai bibit lada."
     },
     {
@@ -17,7 +17,7 @@ function UMKM() {
       location: "Tangerang, Banten (28 km)",
       rating: 4.9,
       reviews: 52,
-      image: "/image 2.png",
+      image: "/image 2.webp",
       description: "Keripik singkong berbagai rasa seperti pedas, manis dan asin."
     },
     {
@@ -27,7 +27,7 @@ function UMKM() {
       location: "Bandung, Jawa Barat (130 km)",
       rating: 4.2,
       reviews: 324,
-      image: "/image 3.png",
+      image: "/image 3.webp",
       description: "Menjual berbagai jenis makanan risol dan berbagai cemilan/minuman lainnya."
     },
     {
@@ -37,7 +37,7 @@ function UMKM() {
       location: "Maroswali, Sulawesi Tengah",
       rating: 4.3,
       reviews: 124,
-      image: "/image 4.png",
+      image: "/image 4.webp",
       description: "Bengkel reparasi mobil dan penjualan alat sparepart mobil."
     },
     {
@@ -47,7 +47,7 @@ function UMKM() {
       location: "Yogyakarta, DIY (520 km)",
       rating: 4.9,
       reviews: 524,
-      image: "/batik.png",
+      image: "/batik.webp",
       description: "Batik tradisional dengan desain modern yang memukau."
     },
     {
@@ -57,7 +57,7 @@ function UMKM() {
       location: "Bandung, Jawa Barat (130 km)",
       rating: 4.8,
       reviews: 154,
-      image: "/tas.png",
+      image: "/tas.webp",
       description: "Tas kulit asli dengan desain ekslusif dan berkualitas."
     },
     {
@@ -67,7 +67,7 @@ function UMKM() {
       location: "Ubud, Bali (1100 km)",
       rating: 4.7,
       reviews: 842,
-      image: "/keramik.png",
+      image: "/keramik.webp",
       description: "Keramik seni dan produk ornamen tradisional khas Bali."
     },
     {
@@ -77,13 +77,13 @@ function UMKM() {
       location: "Flores, NTT (1500 km)",
       rating: 4.9,
       reviews: 424,
-      image: "/tenun.png",
+      image: "/tenun.webp",
       description: "Kain tenun ikat asli dengan warna alami khas Flores."
     }
   ];
 
   return (
-    <section id="umkm" className="pt-40 sm:pt-50 pb-16 min-h-screen">
+    <section id="umkm" className="pt-20 sm:pt-30 pb-16 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-center mb-6 sm:mb-8 w-full">
             <h2 className="font-bold text-2xl sm:text-3xl lg:text-4xl text-black text-center">Jelajahi UMKM Pilihan</h2>
@@ -132,7 +132,7 @@ function UMKM() {
           ))}
         </div>
         <div className="flex justify-center mt-8 sm:mt-10">
-          <button className="bg-[#730700] hover:bg-white text-white hover:text-[#730700] hover:border hover:border-1 hover:border-[#730700] font-bold px-6 py-2 sm:px-10 sm:py-3 rounded-lg text-base sm:text-lg shadow transition">Lihat Semua UMKM</button>
+          <a href="#" className="bg-[#730700] hover:bg-white text-white hover:text-[#730700] hover:border hover:border-1 hover:border-[#730700] font-bold px-6 py-2 sm:px-10 sm:py-3 rounded-lg text-base sm:text-lg shadow transition">Lihat Semua UMKM</a>
         </div>
       </div>
     </section>

@@ -1,7 +1,7 @@
-import Chart from './Chart';
+// import Chart from './Chart';
 function Home() {
   return (
-    <section id="beranda" className="relative px-4 sm:px-6 lg:px-8 bg-cover bg-center min-h-screen flex items-center" style={{ backgroundImage: "url('/hero.png')" }}>
+    <section id="beranda" className="relative px-4 sm:px-6 lg:px-8 bg-cover bg-center min-h-screen flex items-center" style={{ backgroundImage: "url('/hero.webp')" }}>
       <div className="max-w-7xl mx-auto w-full pt-[100px] md:pt-0">
         <div className="flex items-center justify-center">
           <div className="text-center py-12 md:py-0">
@@ -27,19 +27,19 @@ function Home() {
         </div>
 
         {/* Desktop - Chart row layout */}
-        <div className="absolute left-1/2 -bottom-[15vh] transform -translate-x-1/2 w-full z-10 hidden lg:block">
+        {/* <div className="absolute left-1/2 -bottom-[15vh] transform -translate-x-1/2 w-full z-10 hidden lg:block">
           <Chart widthPercent={0.95} layout="row" />
-        </div>
+        </div> */}
 
         {/* Tablet - Chart column layout dengan width lebih kecil */}
-        <div className="absolute left-1/2 -bottom-[29vh] transform -translate-x-1/2 w-full z-10 hidden md:block lg:hidden">
+        {/* <div className="absolute left-1/2 -bottom-[29vh] transform -translate-x-1/2 w-full z-10 hidden md:block lg:hidden">
           <Chart widthPercent={0.8} layout="column" />
-        </div>
+        </div> */}
 
         {/* Mobile - Chart column layout full width */}
-        <div className="absolute left-1/2 -bottom-[22vh] transform -translate-x-1/2 w-full z-10 block md:hidden">
+        {/* <div className="absolute left-1/2 -bottom-[22vh] transform -translate-x-1/2 w-full z-10 block md:hidden">
           <Chart widthPercent={1} layout="column" />
-        </div>
+        </div> */}
 
         <div className="h-40 md:h-44 lg:h-36" />
       </div>
