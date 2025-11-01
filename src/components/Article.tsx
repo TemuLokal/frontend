@@ -63,7 +63,7 @@ function Article() {
           ))}
         </div>
         <div className="flex justify-center mt-8 sm:mt-10">
-          <button className="bg-[#730700] hover:bg-[#730700] text-white font-bold px-6 py-2 sm:px-10 sm:py-3 rounded-lg text-base sm:text-lg shadow transition">Lihat Semua Berita</button>
+          <a href="#" className="bg-[#730700] hover:bg-white text-white hover:text-[#730700] hover:border hover:border-1 hover:border-[#730700] font-bold px-6 py-2 sm:px-10 sm:py-3 rounded-lg text-base sm:text-lg shadow transition">Lihat Semua Berita</a>
         </div>
       </div>
     </section>
