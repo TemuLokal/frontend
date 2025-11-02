@@ -9,14 +9,16 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-[80px] sm:h-[100px]">
           <div className="flex items-center space-x-6 md:space-x-20">
             <div className="flex-shrink-0">
+              <a href="/">
               <span className="text-2xl sm:text-3xl text-black font-bold">ANU</span>
+              </a>
             </div>
             <div className="hidden md:block">
               <div className="flex items-baseline space-x-6">
-                <a href="#beranda" className="text-gray-700 hover:text-[#730700] px-3 py-2 text-base lg:text-lg font-medium">BERANDA</a>
-                <a href="#umkm" className="text-gray-700 hover:text-[#730700] px-3 py-2 text-base lg:text-lg font-medium">UMKM</a>
-                <a href="#berita" className="text-gray-700 hover:text-[#730700] px-3 py-2 text-base lg:text-lg font-medium">BERITA</a>
-                <a href="#pemindai" className="text-gray-700 hover:text-[#730700] px-3 py-2 text-base lg:text-lg font-medium">PEMINDAI</a>
+                <a href="/#beranda" className="text-gray-700 hover:text-[#730700] px-3 py-2 text-base lg:text-lg font-medium">BERANDA</a>
+                <a href="/#umkm" className="text-gray-700 hover:text-[#730700] px-3 py-2 text-base lg:text-lg font-medium">UMKM</a>
+                <a href="/#berita" className="text-gray-700 hover:text-[#730700] px-3 py-2 text-base lg:text-lg font-medium">BERITA</a>
+                <a href="/#pemindai" className="text-gray-700 hover:text-[#730700] px-3 py-2 text-base lg:text-lg font-medium">PEMINDAI</a>
               </div>
             </div>
           </div>
