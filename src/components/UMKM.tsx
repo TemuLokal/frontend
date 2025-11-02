@@ -1,87 +1,7 @@
-function UMKM() {
-  const umkmList = [
-    {
-      id: 1,
-      name: "Budidaya Pembibitan Lada",
-      category: "Pertanian",
-      location: "Bekasi, Jawa Barat (4 km)",
-      rating: 4.8,
-      reviews: 128,
-      image: "/image 1.webp",
-      description: "Pendampingan penanaman lada dan suplai bibit lada."
-    },
-    {
-      id: 2,
-      name: "Kripik Singkong Pak Mul",
-      category: "Jajanan",
-      location: "Tangerang, Banten (28 km)",
-      rating: 4.9,
-      reviews: 52,
-      image: "/image 2.webp",
-      description: "Keripik singkong berbagai rasa seperti pedas, manis dan asin."
-    },
-    {
-      id: 3,
-      name: "Chaa Risoles",
-      category: "Jajanan",
-      location: "Bandung, Jawa Barat (130 km)",
-      rating: 4.2,
-      reviews: 324,
-      image: "/image 3.webp",
-      description: "Menjual berbagai jenis makanan risol dan berbagai cemilan/minuman lainnya."
-    },
-    {
-      id: 4,
-      name: "Sahabat Autoparts Service",
-      category: "Bengkel",
-      location: "Maroswali, Sulawesi Tengah",
-      rating: 4.3,
-      reviews: 124,
-      image: "/image 4.webp",
-      description: "Bengkel reparasi mobil dan penjualan alat sparepart mobil."
-    },
-    {
-      id: 5,
-      name: "Batik Nusantara",
-      category: "Pakaian",
-      location: "Yogyakarta, DIY (520 km)",
-      rating: 4.9,
-      reviews: 524,
-      image: "/batik.webp",
-      description: "Batik tradisional dengan desain modern yang memukau."
-    },
-    {
-      id: 6,
-      name: "Tas Kulit Bandoeng",
-      category: "Aksesoris",
-      location: "Bandung, Jawa Barat (130 km)",
-      rating: 4.8,
-      reviews: 154,
-      image: "/tas.webp",
-      description: "Tas kulit asli dengan desain ekslusif dan berkualitas."
-    },
-    {
-      id: 7,
-      name: "Bali Keramik Creative",
-      category: "Kerajinan",
-      location: "Ubud, Bali (1100 km)",
-      rating: 4.7,
-      reviews: 842,
-      image: "/keramik.webp",
-      description: "Keramik seni dan produk ornamen tradisional khas Bali."
-    },
-    {
-      id: 8,
-      name: "Tenunin Flores",
-      category: "Kerajinan",
-      location: "Flores, NTT (1500 km)",
-      rating: 4.9,
-      reviews: 424,
-      image: "/tenun.webp",
-      description: "Kain tenun ikat asli dengan warna alami khas Flores."
-    }
-  ];
+import { Link } from 'react-router-dom';
+import { umkmList } from '../data/umkmList';
 
+function UMKM() {
   return (
     <section id="umkm" className="pt-20 sm:pt-30 pb-16 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -126,7 +46,13 @@ function UMKM() {
                   ))}
                   <span className="text-xs text-[#71717B] ml-1">{umkm.rating} ({umkm.reviews} Ulasan)</span>
                 </div>
-                <button className="mt-auto bg-white border border-[#730700] text-xs sm:text-sm text-[#730700] font-semibold rounded-[10px] py-2 transition hover:bg-[#730700] hover:text-white hover:shadow">Lihat Detail</button>
+                {/* <a href="/DetailUMKM" className="mt-auto bg-white border border-[#730700] text-center text-xs sm:text-sm text-[#730700] font-semibold rounded-[10px] py-2 transition hover:bg-[#730700] hover:text-white hover:shadow">Lihat Detail</a> */}
+                <Link 
+                  to={`/umkm/${umkm.id}`} 
+                  className="mt-auto bg-white border border-[#730700] text-center text-xs sm:text-sm text-[#730700] font-semibold rounded-[10px] py-2 transition hover:bg-[#730700] hover:text-white hover:shadow block"
+                >
+                  Lihat Detail
+                </Link>
               </div>
             </div>
           ))}
