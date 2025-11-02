@@ -1,10 +1,31 @@
+import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { umkmList } from "../data/umkmList";
 
 export default function DetailUMKM() {
     const { id } = useParams();
     const umkm = umkmList.find((item) => item.id === parseInt(id || ""));
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, [id]);
+    const handleShare = async () => {
+        const shareData = {
+            title: umkm?.name || "UMKM Lokal",
+            text: `Lihat detail UMKM ${umkm?.name}`,
+            url: window.location.href, // URL halaman saat ini
+        };
 
+        try {
+            if (navigator.share) {
+                await navigator.share(shareData);
+            } else {
+                // Jika browser tidak mendukung Web Share
+                alert("Browser kamu belum mendukung fitur share otomatis.\nSilakan salin link ini:\n" + window.location.href);
+            }
+        } catch (err) {
+            console.error("Gagal membagikan:", err);
+        }
+    };
     if (!umkm) {
         return (
             <div className="pt-20 pb-16 text-center">
@@ -60,7 +81,10 @@ export default function DetailUMKM() {
                         </div>
                     </div>
                     <div className="hidden md:block bg-[#730700]/50 w-fit h-fit p-2 rounded-full hover:bg-[#730700]/70 transition">
-                        <button className="flex items-center gap-4 bg-[#730700] text-white px-6 py-3 rounded-full transition">
+                        <button
+                            onClick={handleShare}
+                            className="flex items-center gap-4 bg-[#730700] text-white px-6 py-3 rounded-full transition"
+                        >
                             BAGIKAN
                             <div className="bg-white rounded-full p-3 flex items-center justify-center">
                                 <img
@@ -196,7 +220,10 @@ export default function DetailUMKM() {
                 </div>
             </div>
             <div className="fixed bottom-4 right-4 flex justify-center md:hidden z-50">
-                <button className="flex items-center gap-3 bg-[#730700] text-white px-6 py-3 rounded-full shadow-lg hover:bg-[#730700]/80 transition">
+                <button
+                    onClick={handleShare}
+                    className="flex items-center gap-3 bg-[#730700] text-white px-6 py-3 rounded-full shadow-lg hover:bg-[#730700]/80 transition"
+                >
                     BAGIKAN
                     <div className="bg-white rounded-full p-2 flex items-center justify-center">
                         <img
