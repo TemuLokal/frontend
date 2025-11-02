@@ -197,10 +197,19 @@ export default function DetailUMKM() {
                                 <span>Website: -</span>
                             </div>
                         </div>
-                        <div className="flex gap-2 mt-4 pb-6 px-6">
-                            {[1, 2, 3, 4].map((_, i) => (
-                                <div key={i} className="flex-1 h-10 bg-[#730700] rounded-lg"></div>
-                            ))}
+                        <div className="flex gap-3 mt-4 pb-6 px-6 flex-wrap">
+                            <div className="flex justify-center items-center w-10 h-10 rounded-lg bg-[#730700]">
+                                <img src="/facebook.svg" alt="facebook" className="w-5 h-5" />
+                            </div>
+                            <div className="flex justify-center items-center w-10 h-10 rounded-lg bg-[#730700]">
+                                <img src="/twitter.svg" alt="twitter" className="w-5 h-5" />
+                            </div>
+                            <div className="flex justify-center items-center w-10 h-10 rounded-lg bg-[#730700]">
+                                <img src="/instagram.svg" alt="instagram" className="w-5 h-5" />
+                            </div>
+                            <div className="flex justify-center items-center w-10 h-10 rounded-lg bg-[#730700]">
+                                <img src="/whatsapp.svg" alt="whatsapp" className="w-5 h-5" />
+                            </div>
                         </div>
                     </div>
                     <div className="flex flex-col bg-white border border-[#E8E8EB] rounded-lg shadow p-6">
