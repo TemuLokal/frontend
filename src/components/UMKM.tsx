@@ -106,7 +106,7 @@ function UMKM() {
               <div className="h-40 sm:h-48 w-full rounded-t-[10px] overflow-hidden flex items-center justify-center bg-gray-100">
                 <img src={umkm.image} alt={umkm.name} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300" />
               </div>
-              <span className="absolute top-[145px] sm:top-[185px] left-3 sm:left-4 bg-[#730700] text-white text-xs sm:text-sm font-semibold px-3 sm:px-5 py-1 sm:py-2 rounded-lg shadow-xl z-20">
+              <span className="absolute top-[155px] sm:top-[185px] left-3 sm:left-4 bg-[#730700] text-white text-xs sm:text-sm font-semibold px-3 sm:px-5 py-1 sm:py-2 rounded-lg shadow-xl z-20">
                 {umkm.category}
               </span>
               <div className="flex flex-col flex-1 px-3 sm:px-4 pt-6 sm:pt-8 pb-3 sm:pb-4"> 
