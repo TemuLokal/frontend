@@ -5,7 +5,6 @@ import { umkmList } from '../data/umkmList';
 function UMKM() {
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Filter data UMKM berdasarkan nama atau kategori
   const filteredUMKM = umkmList.filter((umkm) =>
     umkm.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     umkm.category.toLowerCase().includes(searchTerm.toLowerCase())
@@ -14,7 +13,6 @@ function UMKM() {
   return (
     <section id="umkm" className="pt-20 sm:pt-30 pb-16 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header dan Searchbar */}
         <div className="flex flex-col items-center justify-center mb-6 sm:mb-8 w-full">
           <h2 className="font-bold text-2xl sm:text-3xl lg:text-4xl text-black text-center">
             Jelajahi UMKM Pilihan
