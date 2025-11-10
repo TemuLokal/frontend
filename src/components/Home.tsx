@@ -1,6 +1,6 @@
 function Home() {
   return (
-    <section id="beranda" className="relative px-4 sm:px-6 lg:px-8 bg-cover bg-center min-h-screen flex items-center" style={{ backgroundImage: "url('/hero.webp')" }}>
+    <section id="beranda" className="relative px-4 sm:px-6 lg:px-8 bg-cover bg-center min-h-screen flex items-center" style={{ backgroundImage: "url('/hero.png')" }}>
       <div className="max-w-7xl mx-auto w-full pt-[100px] md:pt-0">
         <div className="flex items-center justify-center">
           <div className="text-center py-12 md:py-0">

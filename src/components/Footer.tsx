@@ -10,10 +10,10 @@ function Footer() {
           <div>
             <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Menu</h4>
             <ul className="space-y-1 sm:space-y-2">
-              <li><a href="#beranda" className="text-[#B8B8B8] hover:text-white text-sm sm:text-base">Beranda</a></li>
-              <li><a href="#umkm" className="text-[#B8B8B8] hover:text-white text-sm sm:text-base">UMKM</a></li>
-              <li><a href="#berita" className="text-[#B8B8B8] hover:text-white text-sm sm:text-base">Berita</a></li>
-              <li><a href="#pemindai" className="text-[#B8B8B8] hover:text-white text-sm sm:text-base">Pemindai</a></li>
+              <li><a href="/#beranda" className="text-[#B8B8B8] hover:text-white text-sm sm:text-base">Beranda</a></li>
+              <li><a href="/#umkm" className="text-[#B8B8B8] hover:text-white text-sm sm:text-base">UMKM</a></li>
+              <li><a href="/#berita" className="text-[#B8B8B8] hover:text-white text-sm sm:text-base">Berita</a></li>
+              <li><a href="/#pemindai" className="text-[#B8B8B8] hover:text-white text-sm sm:text-base">Pemindai</a></li>
             </ul>
             </div>
             <div>
