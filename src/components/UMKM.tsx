@@ -22,7 +22,7 @@ function UMKM() {
           </p>
 
           {/* Search Bar */}
-          <div className="w-full max-w-md sm:max-w-xl flex items-center bg-white rounded-[10px] shadow border border-[#E8E8EB] px-3 sm:px-4 py-2 sm:py-3 my-4">
+          <div className="w-full max-w-md sm:max-w-xl flex items-center bg-white rounded-[10px] shadow border border-[#E8E8EB] px-3 sm:px-4 py-2 sm:py-3 my-4 sm:gap-2">
             <img
               className="w-5 h-5 sm:w-6 sm:h-6 text-[#B08B8B] mr-2"
               src="/search.svg"
