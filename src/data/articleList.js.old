@@ -1,0 +1,37 @@
+export const articleList = [{
+        id: 1,
+        title: "Program Pendampingan UMKM 2025 Dibuka",
+        description: "Pemerintah membuka program pendampingan gratis untuk UMKM yang ingin naik kelas dan memperluas pasar.",
+        creator: "Muhammad Islami Kaffah",
+        date: "13 Oktober 2025",
+        image: "/artikel1.webp",
+        category: "Berita"
+    },
+    {
+        id: 2,
+        title: "UMKM Indonesia Raih Penghargaan Internasional",
+        description: "Tiga UMKM Indonesia berhasil meraih penghargaan di ajang kompetisi bisnis tingkat dunia.",
+        creator: "Muhammad Islami Kaffah",
+        date: "12 Oktober 2025",
+        image: "/artikel2.webp",
+        category: "Berita"
+    },
+    {
+        id: 3,
+        title: "Tips Meningkatkan Penjualan di Era Digital",
+        description: "Strategi marketing digital yang terbukti efektif meningkatkan penjualan UMKM.",
+        creator: "Admin",
+        date: "10 Oktober 2025",
+        image: "/artikel3.webp",
+        category: "Artikel"
+    },
+    {
+        id: 4,
+        title: "Tools Penting yang Wajib Dipelajari UMKM",
+        description: "Dalam era digital seperti sekarang, pelaku usaha mikro, kecil, dan menengah wajib menguasai tools berikut.",
+        creator: "Admin",
+        date: "08 Oktober 2025",
+        image: "/artikel4.webp",
+        category: "Artikel"
+    }
+];

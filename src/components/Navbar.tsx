@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,49 +35,34 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center space-x-6 md:space-x-20">
             <div className="flex-shrink-0">
-              <a href="/#beranda">
+              <Link
+                to="/"
+                onClick={() => {
+                  setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
+                }}
+              >
                 <span className="text-2xl sm:text-3xl text-black font-bold">ANU</span>
-              </a>
+              </Link>
             </div>
 
             {/* Desktop Menu */}
             <div className="hidden md:block">
               <div className="flex items-baseline space-x-6">
                 {navItems.map((item) => (
-                  <a key={item.hash} href={item.hash} className={linkClass(item.hash)}>
+                  <Link key={item.hash} to={item.hash} className={linkClass(item.hash)}>
                     {item.name}
                     <span
                       className={`absolute left-0 bottom-0 h-[2px] bg-[#730700] rounded-full transition-all duration-300 ease-in-out ${
                         activeSection === item.hash ? "w-full opacity-100" : "w-0 opacity-0"
                       }`}
                     ></span>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <div className="w-full max-w-xs flex items-center bg-white rounded-[10px] shadow border border-[#E8E8EB] px-3 py-2">
-              <svg
-                className="w-5 h-5 text-[#71717B] mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-              <input
-                type="text"
-                placeholder="Cari Daftar UMKM disini"
-                className="w-full bg-transparent outline-none text-sm md:text-base"
-              />
-            </div>
             <a
               href="/login"
               className="bg-[#730700] text-white px-4 py-2 lg:px-6 lg:py-3 rounded-[10px] text-sm hover:bg-[#730700]/75 transition-colors"
@@ -137,13 +123,13 @@ export default function Navbar() {
               </a>
             ))}
 
-            <div className="px-3 py-2">
+            {/* <div className="px-3 py-2">
               <input
                 type="text"
                 placeholder="Cari Daftar UMKM disini"
                 className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-[#730700]"
               />
-            </div>
+            </div> */}
             <div className="px-3 py-2">
               <a
                 href="/login"

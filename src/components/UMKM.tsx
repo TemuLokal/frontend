@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { umkmList } from '../data/umkmList';
+import { umkmList } from '../data/umkmList.ts';
 
 function UMKM() {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const filteredUMKM = umkmList.filter((umkm) =>
+  const filteredUMKM = umkmList.filter((umkm: any) =>
     umkm.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     umkm.category.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -40,7 +40,7 @@ function UMKM() {
         {/* Daftar UMKM */}
         {filteredUMKM.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-            {filteredUMKM.map((umkm) => (
+            {filteredUMKM.map((umkm: any) => (
               <div
                 key={umkm.id}
                 className="bg-white rounded-[10px] shadow-md border border-[#E8E8EB] flex flex-col h-full group transition-all hover:shadow-xl hover:border-[#F83600] relative"

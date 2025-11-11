@@ -6,6 +6,8 @@ import UMKM from './components/UMKM';
 import Article from './components/Article';
 import Footer from './components/Footer';
 import DetailUMKM from './components/DetailUMKM';
+import DetailArticle from './components/DetailArticle';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -25,6 +27,9 @@ function App() {
           } />
           <Route path="/umkm/:id" element={<DetailUMKM />} />
           <Route path="/umkm" element={<UMKM />} />
+          <Route path="/article/:id" element={<DetailArticle />} />
+          <Route path="/article" element={<Article />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </div>

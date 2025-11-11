@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { umkmList } from "../data/umkmList";
+import NotFound from "./NotFound";
 
 export default function DetailUMKM() {
     const { id } = useParams();
@@ -12,14 +13,13 @@ export default function DetailUMKM() {
         const shareData = {
             title: umkm?.name || "UMKM Lokal",
             text: `Lihat detail UMKM ${umkm?.name}`,
-            url: window.location.href, // URL halaman saat ini
+            url: window.location.href,
         };
 
         try {
             if (navigator.share) {
                 await navigator.share(shareData);
             } else {
-                // Jika browser tidak mendukung Web Share
                 alert("Browser kamu belum mendukung fitur share otomatis.\nSilakan salin link ini:\n" + window.location.href);
             }
         } catch (err) {
@@ -27,14 +27,7 @@ export default function DetailUMKM() {
         }
     };
     if (!umkm) {
-        return (
-            <div className="pt-20 pb-16 text-center">
-                <h2 className="text-2xl font-bold text-red-600">UMKM Tidak Ditemukan</h2>
-                <Link to="/umkm" className="text-[#730700] font-semibold mt-4 inline-block">
-                    ← Kembali ke Daftar UMKM
-                </Link>
-            </div>
-        );
+        return <NotFound />;
     }
 
     return (
