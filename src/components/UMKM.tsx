@@ -52,7 +52,7 @@ function UMKM() {
                     className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <span className="absolute top-[145px] sm:top-[185px] left-3 sm:left-4 bg-[#730700] text-white text-xs sm:text-sm font-semibold px-4 sm:px-5 py-2 rounded-lg shadow-xl z-20">
+                <span className="absolute left-3 top-[140px] sm:top-[175px] bg-[#730700] text-white text-xs sm:text-sm font-semibold px-4 sm:px-5 py-2 rounded-lg shadow-xl z-20">
                   {umkm.category}
                 </span>
                 <div className="flex flex-col flex-1 px-4 sm:px-4 pt-6 sm:pt-8 pb-3 sm:pb-4">
