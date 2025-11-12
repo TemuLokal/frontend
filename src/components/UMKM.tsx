@@ -45,18 +45,18 @@ function UMKM() {
                 key={umkm.id}
                 className="bg-white rounded-[10px] shadow-md border border-[#E8E8EB] flex flex-col h-full group transition-all hover:shadow-xl hover:border-[#F83600] relative"
               >
-                <div className="h-40 sm:h-48 w-full rounded-t-[10px] overflow-hidden flex items-center justify-center bg-gray-100">
+                <div className="h-40 sm:h-48 w-full rounded-t-lg overflow-hidden flex items-center justify-center bg-gray-100">
                   <img
                     src={umkm.image}
                     alt={umkm.name}
                     className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <span className="absolute top-[155px] sm:top-[185px] left-3 sm:left-4 bg-[#730700] text-white text-xs sm:text-sm font-semibold px-3 sm:px-5 py-1 sm:py-2 rounded-lg shadow-xl z-20">
+                <span className="absolute top-[155px] sm:top-[185px] left-3 sm:left-4 bg-[#730700] text-white text-xs sm:text-sm font-semibold px-4 sm:px-5 py-2 rounded-lg shadow-xl z-20">
                   {umkm.category}
                 </span>
-                <div className="flex flex-col flex-1 px-3 sm:px-4 pt-6 sm:pt-8 pb-3 sm:pb-4">
-                  <h4 className="text-base sm:text-lg font-bold text-[#730700] mb-1 text-left line-clamp-2">
+                <div className="flex flex-col flex-1 px-4 sm:px-4 pt-6 sm:pt-8 pb-3 sm:pb-4">
+                  <h4 className="text-lg font-bold text-[#730700] mb-2 text-left line-clamp-2">
                     {umkm.name}
                   </h4>
                   <p className="text-gray-600 text-xs sm:text-sm mb-2 text-left line-clamp-2">
@@ -64,7 +64,7 @@ function UMKM() {
                   </p>
                   <hr className="my-2 sm:my-3 border-t border-gray-200" />
 
-                  <div className="flex items-center gap-2 mb-2">
+                  <div className="flex items-center gap-2 mb-3">
                     <img
                       src="/map-pin.svg"
                       alt="icon"
@@ -76,7 +76,7 @@ function UMKM() {
                   </div>
 
                   {/* Rating */}
-                  <div className="flex items-center gap-1 mb-2 sm:mb-3">
+                  <div className="flex items-center gap-1 mb-3 sm:mb-4">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <svg
                         key={star}
@@ -98,7 +98,7 @@ function UMKM() {
 
                   <Link
                     to={`/umkm/${umkm.id}`}
-                    className="mt-auto bg-white border border-[#730700] text-center text-xs sm:text-sm text-[#730700] font-semibold rounded-[10px] py-2 transition hover:bg-[#730700] hover:text-white hover:shadow block"
+                    className="bg-white border border-[#730700] text-center text-xs sm:text-sm text-[#730700] font-semibold rounded-[10px] py-3 transition hover:bg-[#730700] hover:text-white hover:shadow block"
                   >
                     Lihat Detail
                   </Link>

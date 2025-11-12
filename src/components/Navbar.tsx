@@ -155,7 +155,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
+        <div className="md:hidden bg-white border-t border-gray-200 shadow-xl">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map((item) => (
               <a
@@ -178,14 +178,14 @@ export default function Navbar() {
               >
                 {item.name}
                 <span
-                  className={`absolute left-0 bottom-0 h-[2px] bg-[#730700] rounded-full transition-all duration-300 ease-in-out ${
+                  className={`absolute left-2 right-2 bottom-0 h-[2px] bg-[#730700] rounded-full transition-all duration-300 ease-in-out ${
                     item.hash === "#beranda"
                       ? isBerandaActive
-                        ? "w-full opacity-100"
-                        : "w-0 opacity-0"
+                        ? "opacity-100"
+                        : "opacity-0"
                       : activeSection === item.hash
-                        ? "w-full opacity-100"
-                        : "w-0 opacity-0"
+                        ? "opacity-100"
+                        : "opacity-0"
                   }`}
                 ></span>
               </a>
