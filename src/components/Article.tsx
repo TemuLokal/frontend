@@ -3,7 +3,7 @@ import { articleList } from '../data/articleList.ts';
 
 function Article() {
   return (
-    <section id="berita" className="pt-26 pb-16 min-h-screen">
+    <section id="article" className="pt-26 pb-16 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-center mb-6 sm:mb-8 w-full">
             <h2 className="font-bold text-2xl sm:text-3xl lg:text-4xl text-black text-center">Berita & Artikel Terbaru</h2>

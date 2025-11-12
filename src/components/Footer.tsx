@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="bg-[#730700] text-white py-8 sm:py-12">
+    <footer id="footer" className="bg-[#730700] text-white py-8 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8">
           <div>
@@ -12,7 +12,7 @@ function Footer() {
             <ul className="space-y-1 sm:space-y-2">
               <li><a href="/#beranda" className="text-[#B8B8B8] hover:text-white text-sm sm:text-base">Beranda</a></li>
               <li><a href="/#umkm" className="text-[#B8B8B8] hover:text-white text-sm sm:text-base">UMKM</a></li>
-              <li><a href="/#berita" className="text-[#B8B8B8] hover:text-white text-sm sm:text-base">Berita</a></li>
+              <li><a href="/#article" className="text-[#B8B8B8] hover:text-white text-sm sm:text-base">Berita</a></li>
               <li><a href="/#pemindai" className="text-[#B8B8B8] hover:text-white text-sm sm:text-base">Pemindai</a></li>
             </ul>
             </div>

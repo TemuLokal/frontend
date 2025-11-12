@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Set aktif berdasarkan hash URL saat ini
     setActiveSection(window.location.hash || "#beranda");
 
     const handleHashChange = () => {
@@ -15,18 +16,55 @@ export default function Navbar() {
 
     window.addEventListener("hashchange", handleHashChange);
     return () => window.removeEventListener("hashchange", handleHashChange);
-  }, []);
+  }, [location]);
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash && location.pathname === "/") {
+      const timer = setTimeout(() => {
+        const element = document.getElementById(hash.slice(1));
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [location.pathname]);
 
   const navItems = [
     { name: "BERANDA", hash: "#beranda" },
     { name: "UMKM", hash: "#umkm" },
-    { name: "BERITA", hash: "#berita" },
+    { name: "BERITA", hash: "#article" },
     { name: "PEMINDAI", hash: "#footer" },
   ];
 
-  const linkClass = (hash) =>
-    `relative px-3 py-2 text-base lg:text-lg font-medium transition-colors duration-300
-    ${activeSection === hash ? "text-[#730700]" : "text-gray-700 hover:text-[#730700]"}`;
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
+    e.preventDefault();
+    setActiveSection(hash);
+
+    if (location.pathname === "/") {
+      const element = document.getElementById(hash.slice(1));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+      window.history.pushState(null, "", hash);
+    } else {
+      navigate("/" + hash);
+    }
+  };
+
+  const isBerandaActive =
+    location.pathname === "/" &&
+    (window.location.hash === "" || window.location.hash === "#" || window.location.hash === "#beranda");
+
+  const linkClass = (hash: string) => {
+    if (hash === "#beranda") {
+      return `relative px-3 py-2 text-base lg:text-lg font-medium transition-colors duration-300 cursor-pointer
+        ${isBerandaActive ? "text-[#730700]" : "text-gray-700 hover:text-[#730700]"}`;
+    }
+    return `relative px-3 py-2 text-base lg:text-lg font-medium transition-colors duration-300 cursor-pointer
+      ${activeSection === hash ? "text-[#730700]" : "text-gray-700 hover:text-[#730700]"}`;
+  };
 
   return (
     <nav className="bg-white fixed w-full z-50 shadow-sm">
@@ -35,28 +73,39 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center space-x-6 md:space-x-20">
             <div className="flex-shrink-0">
-              <Link
-                to="/"
-                onClick={() => {
-                  setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
+              <a
+                href="/"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.href = "/";
                 }}
               >
-                <span className="text-2xl sm:text-3xl text-black font-bold">ANU</span>
-              </Link>
+                <span className="text-2xl sm:text-3xl text-black font-bold">Temu Lokal</span>
+              </a>
             </div>
 
             {/* Desktop Menu */}
             <div className="hidden md:block">
               <div className="flex items-baseline space-x-6">
                 {navItems.map((item) => (
-                  <Link key={item.hash} to={item.hash} className={linkClass(item.hash)}>
+                  <a
+                    key={item.hash}
+                    href={item.hash}
+                    onClick={(e) => handleNavClick(e, item.hash)}
+                    className={linkClass(item.hash)}
+                  >
                     {item.name}
                     <span
-                      className={`absolute left-0 bottom-0 h-[2px] bg-[#730700] rounded-full transition-all duration-300 ease-in-out ${
-                        activeSection === item.hash ? "w-full opacity-100" : "w-0 opacity-0"
-                      }`}
+                      className={`absolute left-0 bottom-0 h-[2px] bg-[#730700] rounded-full transition-all duration-300 ease-in-out ${item.hash === "#beranda"
+                          ? isBerandaActive
+                            ? "w-full opacity-100"
+                            : "w-0 opacity-0"
+                          : activeSection === item.hash
+                            ? "w-full opacity-100"
+                            : "w-0 opacity-0"
+                        }`}
                     ></span>
-                  </Link>
+                  </a>
                 ))}
               </div>
             </div>
@@ -112,14 +161,33 @@ export default function Navbar() {
               <a
                 key={item.hash}
                 href={item.hash}
-                onClick={() => setIsMenuOpen(false)}
-                className={`block px-3 py-2 text-base font-medium transition-all duration-300 ${
-                  activeSection === item.hash
-                    ? "text-[#730700] border-b-2 border-[#730700]"
-                    : "text-gray-700 hover:text-[#730700]"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsMenuOpen(false);
+                  handleNavClick(e as any, item.hash);
+                }}
+                className={`relative block px-2 py-2 text-base font-medium transition-all duration-300 ${
+                  item.hash === "#beranda"
+                    ? isBerandaActive
+                      ? "text-[#730700]"
+                      : "text-gray-700 hover:text-[#730700]"
+                    : activeSection === item.hash
+                      ? "text-[#730700]"
+                      : "text-gray-700 hover:text-[#730700]"
                 }`}
               >
                 {item.name}
+                <span
+                  className={`absolute left-0 bottom-0 h-[2px] bg-[#730700] rounded-full transition-all duration-300 ease-in-out ${
+                    item.hash === "#beranda"
+                      ? isBerandaActive
+                        ? "w-full opacity-100"
+                        : "w-0 opacity-0"
+                      : activeSection === item.hash
+                        ? "w-full opacity-100"
+                        : "w-0 opacity-0"
+                  }`}
+                ></span>
               </a>
             ))}
 
@@ -130,7 +198,7 @@ export default function Navbar() {
                 className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-[#730700]"
               />
             </div> */}
-            <div className="px-3 py-2">
+            <div className="px-2 py-2">
               <a
                 href="/login"
                 className="bg-[#730700] text-white px-6 py-2 rounded-[10px] text-sm hover:bg-[#730700]/75 w-full block text-center transition-colors"
