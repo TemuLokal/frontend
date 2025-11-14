@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { umkmList } from "../data/umkmList";
 import NotFound from "./NotFound";
@@ -6,9 +6,13 @@ import NotFound from "./NotFound";
 export default function DetailUMKM() {
     const { id } = useParams();
     const umkm = umkmList.find((item) => item.id === parseInt(id || ""));
+
+
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
+
     }, [id]);
+
     const handleShare = async () => {
         const shareData = {
             title: umkm?.name || "UMKM Lokal",
@@ -26,205 +30,216 @@ export default function DetailUMKM() {
             console.error("Gagal membagikan:", err);
         }
     };
+
     if (!umkm) {
         return <NotFound />;
     }
 
     return (
         <section className="min-h-screen">
+            {/* Hero Section dengan Animasi */}
             <div
                 className="relative h-screen w-full bg-cover bg-center"
                 style={{ backgroundImage: `url(${umkm.image})` }}
             >
                 <div className="absolute inset-0 bg-black/40"></div>
 
-                <div className="relative max-w-7xl mx-auto h-full flex items-center justify-between px-12">
-                    <div className="flex flex-col text-white">
-                        <h1 className="text-4xl sm:text-6xl font-bold">{umkm.name}</h1>
-                        <div className="flex items-center gap-3 mt-2">
+                <div className="relative max-w-7xl mx-auto h-full flex items-center justify-between px-6 lg:px-12">
+                    <div className={`flex flex-col text-white transition-all duration-1000`}>
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in-up">
+                            {umkm.name}
+                        </h1>
+                        <div className="flex items-center gap-3 mb-6 animate-fade-in-up" style={{ animationDelay: '250ms' }}>
                             <div className="w-8 h-1 rounded-full bg-[#730700]"></div>
-                            <p className="text-lg sm:text-2xl text-[#B8B8B8]">
+                            <p className="text-lg sm:text-xl lg:text-2xl text-[#E8E8E8]">
                                 Owner <span className="font-semibold text-white">Khaesya Koria Silalahi</span>
                             </p>
                         </div>
 
-                        <div className="flex items-center gap-3 mt-4">
-                            <span className="bg-[#730700] text-white text-sm sm:text-md px-5 py-1 rounded-lg uppercase">
+                        <div className="flex items-center gap-3 mb-8 animate-fade-in-up" style={{ animationDelay: '400ms' }}>
+                            <span className="bg-[#730700] text-white text-sm sm:text-base px-6 py-2 rounded-lg uppercase font-semibold shadow-lg">
                                 {umkm.category}
                             </span>
-                            <div className="flex items-center gap-1 text-white text-sm sm:text-md font-semibold px-4 py-1 rounded-lg">
+                            <div className="flex items-center gap-2 text-white text-sm sm:text-base font-semibold px-4 py-2">
                                 BUKA
                                 <img src="/check.svg" alt="icon" className="w-4 h-4" />
                             </div>
                         </div>
 
-                        <div className="flex flex-col gap-4 mt-6 text-sm sm:text-md font-bold">
-                            <div className="flex items-center gap-4">
+                        <div className="flex flex-col gap-4 animate-fade-in-up" style={{ animationDelay: '600ms' }}>
+                            <div className="flex items-center gap-4 text-base sm:text-lg">
                                 <img src="/phone.svg" alt="icon" className="w-5 h-5" />
                                 <span>083121102304</span>
                             </div>
-                            <div className="flex items-center gap-4">
+                            <div className="flex items-center gap-4 text-base sm:text-lg">
                                 <img src="/map-pin-white.svg" alt="icon" className="w-5 h-5" />
                                 <span>{umkm.location}</span>
                             </div>
-                            <div className="flex items-center gap-4">
+                            <div className="flex items-center gap-4 text-base sm:text-lg">
                                 <img src="/mail-white.svg" alt="icon" className="w-5 h-5" />
                                 <span>kesyy28@gmail.com</span>
                             </div>
                         </div>
                     </div>
-                    <div className="hidden md:block bg-[#730700]/50 w-fit h-fit p-2 rounded-full hover:bg-[#730700]/70 transition">
-                        <button
-                            onClick={handleShare}
-                            className="flex items-center gap-4 bg-[#730700] text-white px-6 py-3 rounded-full transition"
-                        >
-                            BAGIKAN
-                            <div className="bg-white rounded-full p-3 flex items-center justify-center">
-                                <img
-                                    src="/share-2.svg"
-                                    alt="icon"
-                                    className="w-5 h-5 object-contain"
-                                />
-                            </div>
-                        </button>
+                    
+                    {/* Share Button */}
+                    <div className={`hidden md:block transition-all duration-1000 animate-fade-in-up`} style={{ animationDelay: '600ms' }}>
+                        <div className="bg-[#730700]/50 w-fit h-fit p-2 rounded-full hover:bg-[#730700]/70 transition-all duration-300 hover:scale-105">
+                            <button
+                                onClick={handleShare}
+                                className="flex items-center gap-4 bg-[#730700] text-white px-6 py-3 rounded-full transition-all duration-300 hover:bg-[#5a0500] shadow-lg hover:shadow-xl"
+                            >
+                                BAGIKAN
+                                <div className="bg-white rounded-full p-3 flex items-center justify-center transition-transform duration-300 hover:scale-110">
+                                    <img
+                                        src="/share-2.svg"
+                                        alt="icon"
+                                        className="w-5 h-5 object-contain"
+                                    />
+                                </div>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div className="flex flex-col lg:flex-row gap-8 px-6 py-12 max-w-7xl mx-auto">
-                <div className="flex flex-col gap-4 sm:gap-8 flex-1">
-                    <div className="flex flex-col bg-[#730700] rounded-xl py-4 sm:py-5 px-4 sm:px-10 text-white">
+            {/* Content Section */}
+            <div className="flex flex-col lg:flex-row gap-8 px-4 sm:px-6 py-12 max-w-7xl mx-auto">
+                {/* Main Content */}
+                <div className="flex flex-col gap-6 flex-1">
+                    <div className="bg-[#730700] rounded-xl py-4 sm:py-5 px-4 sm:px-10 text-white">
                         Beranda - Detail UMKM
                     </div>
-                    <div className="flex flex-col bg-white border border-[#E8E8EB] rounded-xl shadow p-4 sm:p-10">
-                        <div className="flex">
-                            <div className="text-black text-xl sm:text-2xl font-bold">
+
+                    {/* About Section */}
+                    <div className="bg-white border border-[#E8E8EB] rounded-xl shadow-lg p-6 sm:p-8">
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className="w-2 h-8 bg-[#730700] rounded-full"></div>
+                            <h2 className="text-xl sm:text-2xl font-bold text-black">
                                 Tentang Kami
-                            </div>
+                            </h2>
                         </div>
-                        <p className="text-[#71717B] mt-2">
+                        <p className="text-[#71717B] leading-relaxed text-base sm:text-lg">
                             {umkm.description}
                         </p>
                     </div>
-                    <div className="flex flex-col bg-[#730700] rounded-xl py-4 sm:py-5 px-4 sm:px-10 text-white">
+
+                    {/* Product Description */}
+                    <div className="bg-[#730700] rounded-xl py-4 sm:py-5 px-4 sm:px-10 text-white">
                         Deskripsi Produk dan Jasa
                     </div>
-                    <div className="flex flex-col bg-white border border-[#E8E8EB] rounded-xl shadow p-4 sm:p-6">
-                        <p className="text-[#71717B] leading-relaxed">
+
+                    <div className="bg-white border border-[#E8E8EB] rounded-xl shadow-lg p-6 sm:p-8">
+                        <p className="text-[#71717B] leading-relaxed text-base sm:text-lg">
                             {umkm.longDescription}
                         </p>
                     </div>
 
-                    <div className="flex flex-col bg-white border border-[#E8E8EB] rounded-xl shadow p-4 sm:p-6">
-                        <div className="flex">
-                            <div className="text-black text-xl px-2 sm:px-4 py-1 sm:py-2 rounded-md font-semibold">
+                    {/* Gallery Section */}
+                    <div className="bg-white border border-[#E8E8EB] rounded-xl shadow-lg p-6 sm:p-8">
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="w-2 h-8 bg-[#730700] rounded-full"></div>
+                            <h2 className="text-xl sm:text-2xl font-bold text-black">
                                 Galeri / Foto
-                            </div>
+                            </h2>
                         </div>
-                        <div className="flex flex-wrap gap-4 mt-2 sm:mt-4">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
                             {umkm.gallery?.map((img, i) => (
-                                <div key={i} className="flex-1 min-w-[150px] max-w-[200px]">
-                                    <img
-                                        src={img}
-                                        alt={`foto-${i}`}
-                                        className="rounded-lg object-cover w-full h-40"
-                                    />
+                                <div key={i} className="group cursor-pointer">
+                                    <div className="rounded-lg overflow-hidden shadow-md transition-all duration-300 group-hover:shadow-xl group-hover:scale-105">
+                                        <img
+                                            src={img}
+                                            alt={`foto-${i}`}
+                                            className="w-full h-32 sm:h-40 object-cover transition-transform duration-300 group-hover:scale-110"
+                                        />
+                                    </div>
                                 </div>
                             ))}
 
                             {!umkm.gallery && (
                                 <>
-                                    <div className="flex-1 min-w-[150px] max-w-[275px]">
-                                        <div className="bg-gray-200 w-full h-55 flex items-center justify-center">
-                                            <span className="text-gray-500">Foto 1</span>
+                                    {[1, 2, 3, 4].map((num) => (
+                                        <div key={num} className="group cursor-pointer">
+                                            <div className="bg-gray-200 rounded-lg h-32 sm:h-40 flex items-center justify-center transition-all duration-300 group-hover:bg-gray-300 group-hover:shadow-lg">
+                                                <span className="text-gray-500 font-semibold">Foto {num}</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="flex-1 min-w-[150px] max-w-[275px]">
-                                        <div className="bg-gray-200 w-full h-55 flex items-center justify-center">
-                                            <span className="text-gray-500">Foto 2</span>
-                                        </div>
-                                    </div>
-                                    <div className="flex-1 min-w-[150px] max-w-[275px]">
-                                        <div className="bg-gray-200 w-full h-55 flex items-center justify-center">
-                                            <span className="text-gray-500">Foto 3</span>
-                                        </div>
-                                    </div>
-                                    <div className="flex-1 min-w-[150px] max-w-[275px]">
-                                        <div className="bg-gray-200 w-full h-55 flex items-center justify-center">
-                                            <span className="text-gray-500">Foto 4</span>
-                                        </div>
-                                    </div>
+                                    ))}
                                 </>
                             )}
                         </div>
                     </div>
                 </div>
 
+                {/* Sidebar */}
                 <div className="flex flex-col gap-6 w-full lg:w-80">
                     <h3 className="font-bold text-black text-lg sm:text-xl">Lokasi / Kontak Usaha :</h3>
-                    <div className="flex flex-col bg-white border border-[#E8E8EB] rounded-lg shadow">
-                        <div className="w-full aspect-video rounded-t-lg overflow-hidden mb-4">
+                    
+                    {/* Map Card */}
+                    <div className="bg-white border border-[#E8E8EB] rounded-xl shadow-lg overflow-hidden">
+                        <div className="w-full aspect-video overflow-hidden">
                             <iframe
                                 title="map"
                                 src={umkm.map}
-                                className="w-full h-full"
+                                className="w-full h-full transition-transform duration-300 hover:scale-105"
                                 loading="lazy"
                             ></iframe>
                         </div>
 
-                        <div className="flex flex-col gap-2 text-gray-700 text-sm px-6">
-                            <div className="flex items-center gap-4 truncate">
-                                <img src="/map-pin.svg" alt="icon" className="w-5 h-5" />
-                                <span>{umkm.location}</span>
-                            </div>
-                            <div className="flex items-center gap-4">
-                                <img src="/phone-brown.svg" alt="icon" className="w-5 h-5" />
-                                <span>083121102304</span>
-                            </div>
-                            <div className="flex items-center gap-4">
-                                <img src="/mail-brown.svg" alt="icon" className="w-5 h-5" />
-                                <span>kesyy28@gmail.com</span>
-                            </div>
-                            <div className="flex items-center gap-4">
-                                <img src="/globe.svg" alt="icon" className="w-5 h-5" />
-                                <span>Website: -</span>
-                            </div>
+                        <div className="flex flex-col gap-4 text-gray-700 p-6">
+                            {[
+                                { icon: '/map-pin.svg', text: umkm.location },
+                                { icon: '/phone-brown.svg', text: '083121102304' },
+                                { icon: '/mail-brown.svg', text: 'kesyy28@gmail.com' },
+                                { icon: '/globe.svg', text: 'Website: -' }
+                            ].map((item, index) => (
+                                <div key={index} className="flex items-center gap-4 transition-all duration-300 hover:text-[#730700]">
+                                    <img src={item.icon} alt="icon" className="w-5 h-5 flex-shrink-0" />
+                                    <span className="text-sm">{item.text}</span>
+                                </div>
+                            ))}
                         </div>
-                        <div className="flex gap-3 mt-4 pb-6 px-6 flex-wrap">
-                            <div className="flex justify-center items-center w-10 h-10 rounded-lg bg-[#730700]">
-                                <img src="/facebook.svg" alt="facebook" className="w-5 h-5" />
-                            </div>
-                            <div className="flex justify-center items-center w-10 h-10 rounded-lg bg-[#730700]">
-                                <img src="/twitter.svg" alt="twitter" className="w-5 h-5" />
-                            </div>
-                            <div className="flex justify-center items-center w-10 h-10 rounded-lg bg-[#730700]">
-                                <img src="/instagram.svg" alt="instagram" className="w-5 h-5" />
-                            </div>
-                            <div className="flex justify-center items-center w-10 h-10 rounded-lg bg-[#730700]">
-                                <img src="/whatsapp.svg" alt="whatsapp" className="w-5 h-5" />
-                            </div>
+                        
+                        {/* Social Media */}
+                        <div className="flex gap-3 px-6 pb-6 flex-wrap">
+                            {['facebook', 'twitter', 'instagram', 'whatsapp'].map((social, index) => (
+                                <div 
+                                    key={social}
+                                    className="flex justify-center items-center w-10 h-10 rounded-lg bg-[#730700] transition-all duration-300 hover:bg-[#5a0500] hover:scale-110 cursor-pointer"
+                                >
+                                    <img src={`/${social}.svg`} alt={social} className="w-5 h-5" />
+                                </div>
+                            ))}
                         </div>
                     </div>
-                    <div className="flex flex-col bg-white border border-[#E8E8EB] rounded-lg shadow p-6">
-                        <div className="flex items-center gap-2 mb-4">
+
+                    {/* Opening Hours */}
+                    <div className="bg-white border border-[#E8E8EB] rounded-xl shadow-lg p-6">
+                        <div className="flex items-center gap-3 mb-6">
                             <img src="/clock.svg" alt="icon" className="w-5 h-5" />
-                            <h3 className="font-bold text-black text-lg">Buka</h3>
+                            <h3 className="font-bold text-black text-lg">Jam Operasional</h3>
                         </div>
-                        <div className="flex flex-col gap-2 text-sm text-black">
-                            {["Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu", "Minggu"].map((day) => (
-                                <div key={day} className="flex justify-between items-center">
-                                    <span className="font-bold">{day}</span>
-                                    <span>10:00 - 22:00</span>
+                        <div className="flex flex-col gap-3 text-sm text-black">
+                            {["Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu", "Minggu"].map((day, index) => (
+                                <div 
+                                    key={day} 
+                                    className="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0 transition-all duration-300 hover:bg-gray-50 hover:px-3 hover:rounded-lg"
+                                    style={{ animationDelay: `${index * 50}ms` }}
+                                >
+                                    <span className="font-semibold">{day}</span>
+                                    <span className="text-[#730700] font-medium">10:00 - 22:00</span>
                                 </div>
                             ))}
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="fixed bottom-4 right-4 flex justify-center md:hidden z-50">
+
+            {/* Mobile Share Button */}
+            <div className="fixed bottom-6 right-6 flex justify-center md:hidden z-50 animate-scale-in">
                 <button
                     onClick={handleShare}
-                    className="flex items-center gap-3 bg-[#730700] text-white px-6 py-3 rounded-full shadow-lg hover:bg-[#730700]/80 transition"
+                    className="flex items-center gap-3 bg-[#730700] text-white px-6 py-3 rounded-full shadow-xl hover:bg-[#5a0500] transition-all duration-300 hover:scale-105"
                 >
                     BAGIKAN
                     <div className="bg-white rounded-full p-2 flex items-center justify-center">

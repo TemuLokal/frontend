@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen pt-15">
+      <div className="min-h-screen">
         <Routes>
           <Route path="/" element={
             <>
