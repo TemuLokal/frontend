@@ -92,13 +92,13 @@ export default function DetailUMKM() {
             </div>
 
             <div className="flex flex-col lg:flex-row gap-8 px-6 py-12 max-w-7xl mx-auto">
-                <div className="flex flex-col gap-8 flex-1">
-                    <div className="flex flex-col bg-[#730700] rounded-xl py-5 px-10 text-white">
+                <div className="flex flex-col gap-4 sm:gap-8 flex-1">
+                    <div className="flex flex-col bg-[#730700] rounded-xl py-4 sm:py-5 px-4 sm:px-10 text-white">
                         Beranda - Detail UMKM
                     </div>
-                    <div className="flex flex-col bg-white border border-[#E8E8EB] rounded-xl shadow p-10">
+                    <div className="flex flex-col bg-white border border-[#E8E8EB] rounded-xl shadow p-4 sm:p-10">
                         <div className="flex">
-                            <div className="text-black text-2xl font-bold">
+                            <div className="text-black text-xl sm:text-2xl font-bold">
                                 Tentang Kami
                             </div>
                         </div>
@@ -106,22 +106,22 @@ export default function DetailUMKM() {
                             {umkm.description}
                         </p>
                     </div>
-                    <div className="flex flex-col bg-[#730700] rounded-xl py-5 px-10 text-white">
+                    <div className="flex flex-col bg-[#730700] rounded-xl py-4 sm:py-5 px-4 sm:px-10 text-white">
                         Deskripsi Produk dan Jasa
                     </div>
-                    <div className="flex flex-col bg-white border border-[#E8E8EB] rounded-xl shadow p-6">
+                    <div className="flex flex-col bg-white border border-[#E8E8EB] rounded-xl shadow p-4 sm:p-6">
                         <p className="text-[#71717B] leading-relaxed">
                             {umkm.longDescription}
                         </p>
                     </div>
 
-                    <div className="flex flex-col bg-white border border-[#E8E8EB] rounded-xl shadow p-6">
+                    <div className="flex flex-col bg-white border border-[#E8E8EB] rounded-xl shadow p-4 sm:p-6">
                         <div className="flex">
-                            <div className="text-black px-4 py-2 rounded-md font-semibold">
+                            <div className="text-black text-xl px-2 sm:px-4 py-1 sm:py-2 rounded-md font-semibold">
                                 Galeri / Foto
                             </div>
                         </div>
-                        <div className="flex flex-wrap gap-4 mt-4">
+                        <div className="flex flex-wrap gap-4 mt-2 sm:mt-4">
                             {umkm.gallery?.map((img, i) => (
                                 <div key={i} className="flex-1 min-w-[150px] max-w-[200px]">
                                     <img
@@ -161,13 +161,13 @@ export default function DetailUMKM() {
                 </div>
 
                 <div className="flex flex-col gap-6 w-full lg:w-80">
-                    <h3 className="font-bold text-black text-xl">Lokasi / Kontak Usaha :</h3>
+                    <h3 className="font-bold text-black text-lg sm:text-xl">Lokasi / Kontak Usaha :</h3>
                     <div className="flex flex-col bg-white border border-[#E8E8EB] rounded-lg shadow">
-                        <div className="flex">
+                        <div className="w-full aspect-video rounded-t-lg overflow-hidden mb-4">
                             <iframe
                                 title="map"
                                 src={umkm.map}
-                                className="flex-1 h-56 rounded-lg mb-4"
+                                className="w-full h-full"
                                 loading="lazy"
                             ></iframe>
                         </div>

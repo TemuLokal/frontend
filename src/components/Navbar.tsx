@@ -35,7 +35,6 @@ export default function Navbar() {
     { name: "BERANDA", hash: "#beranda" },
     { name: "UMKM", hash: "#umkm" },
     { name: "BERITA", hash: "#article" },
-    { name: "PEMINDAI", hash: "#footer" },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {

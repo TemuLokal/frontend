@@ -119,55 +119,55 @@ export default function DetailArticle() {
 
             {/* Related Articles Section */}
             <div className="px-6 py-4 max-w-7xl mx-auto">
-                    <div className="text-center mb-12">
-                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Berita & Artikel Lainnya</h2>
-                        <p className="text-gray-600">Informasi terkini tentang perkembangan UMKM Indonesia</p>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {relatedArticles.map((relatedArticle: any) => (
-                            <Link
-                                key={relatedArticle.id}
-                                to={`/article/${relatedArticle.id}`}
-                                className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden hover:shadow-lg hover:border-[#730700] transition-all group"
-                            >
-                                <div className="h-40 sm:h-48 overflow-hidden bg-gray-100">
-                                    <img
-                                        src={relatedArticle.image}
-                                        alt={relatedArticle.title}
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                    />
-                                </div>
-                                <div className="p-4 sm:p-5">
-                                    <div className="flex items-center gap-2 mb-2">
-                                        <span className="inline-block bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">
-                                            {relatedArticle.category}
-                                        </span>
-                                        <span className="text-gray-500 text-xs">{relatedArticle.date}</span>
-                                    </div>
-                                    <h3 className="font-bold text-gray-900 mb-2 line-clamp-2 text-sm lg:text-base">
-                                        {relatedArticle.title}
-                                    </h3>
-                                    <p className="text-gray-600 text-xs lg:text-sm line-clamp-2 mb-4">
-                                        {relatedArticle.description}
-                                    </p>
-                                    <button className="w-full bg-white border border-[#730700] text-[#730700] text-xs sm:text-sm font-semibold py-2 rounded hover:bg-[#730700] hover:text-white transition">
-                                        Lihat Detail
-                                    </button>
-                                </div>
-                            </Link>
-                        ))}
-                    </div>
-
-                    <div className="text-center mt-12 mb-8">
-                        <Link
-                            to="/article"
-                            className="inline-block bg-[#730700] hover:bg-[#730700]/90 text-white font-bold px-8 py-3 rounded-lg transition"
-                        >
-                            Lihat Semua Berita
-                        </Link>
-                    </div>
+                <div className="text-center mb-12">
+                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Berita & Artikel Lainnya</h2>
+                    <p className="text-gray-600">Informasi terkini tentang perkembangan UMKM Indonesia</p>
                 </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {relatedArticles.map((relatedArticle: any) => (
+                        <Link
+                            key={relatedArticle.id}
+                            to={`/article/${relatedArticle.id}`}
+                            className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden hover:shadow-lg hover:border-[#730700] transition-all group"
+                        >
+                            <div className="h-40 sm:h-48 overflow-hidden bg-gray-100">
+                                <img
+                                    src={relatedArticle.image}
+                                    alt={relatedArticle.title}
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                            </div>
+                            <div className="p-4 sm:p-5">
+                                <div className="flex items-center gap-2 mb-2">
+                                    <span className="inline-block bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">
+                                        {relatedArticle.category}
+                                    </span>
+                                    <span className="text-gray-500 text-xs">{relatedArticle.date}</span>
+                                </div>
+                                <h3 className="font-bold text-gray-900 mb-2 line-clamp-2 text-sm lg:text-base truncate">
+                                    {relatedArticle.title}
+                                </h3>
+                                <p className="text-gray-600 text-xs lg:text-sm line-clamp-2 mb-4 truncate">
+                                    {relatedArticle.description}
+                                </p>
+                                <button className="w-full bg-white border border-[#730700] text-[#730700] text-xs sm:text-sm font-semibold py-2 rounded hover:bg-[#730700] hover:text-white transition">
+                                    Lihat Detail
+                                </button>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
+
+                <div className="text-center mt-12 mb-8">
+                    <Link
+                        to="/article"
+                        className="inline-block bg-[#730700] hover:bg-[#730700]/90 text-white font-bold px-8 py-3 rounded-lg transition"
+                    >
+                        Lihat Semua Berita
+                    </Link>
+                </div>
+            </div>
         </section>
     );
 }

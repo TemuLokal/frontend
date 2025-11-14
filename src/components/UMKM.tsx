@@ -64,7 +64,7 @@ function UMKM() {
                   </p>
                   <hr className="my-2 sm:my-3 border-t border-gray-200" />
 
-                  <div className="flex items-center gap-2 mb-3">
+                  <div className="flex items-center gap-2 mb-2 mt-2">
                     <img
                       src="/map-pin.svg"
                       alt="icon"
