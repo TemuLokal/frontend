@@ -8,6 +8,8 @@ import Footer from './components/Footer';
 import DetailUMKM from './components/DetailUMKM';
 import DetailArticle from './components/DetailArticle';
 import NotFound from './components/NotFound';
+import Register from './components/Register';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
           <Route path="/umkm" element={<UMKM />} />
           <Route path="/article/:id" element={<DetailArticle />} />
           <Route path="/article" element={<Article />} />
+          <Route path="/register" element={<Register /> } />
+          <Route path="/login" element={<Login /> } />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
