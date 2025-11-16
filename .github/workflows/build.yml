@@ -1,0 +1,64 @@
+name: Build & Deploy to Production Branch
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: |
+          npm ci                # lebih cepat & reproducible
+          # kalau pakai yarn → yarn --frozen-lockfile
+          # kalau pakai pnpm → pnpm i --frozen-lockfile
+
+      - name: Build React app
+        run: |
+          npm run build         # CRA / Vite / Remix
+          # Next.js → npm run build && npm run export  (kalau static export)
+        env:
+          VITE_SOME_KEY: ${{ secrets.VITE_SOME_KEY }}
+          REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
+
+      - name: Deploy to production branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          # ensure build output exists
+          if [ ! -d dist ]; then
+            echo "Error: dist/ not found. Build step may have failed." >&2
+            exit 1
+          fi
+
+          # Create a temporary git history inside dist and push only these files to production
+          cd dist
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Deploy: build artifacts from $GITHUB_SHA"
+
+          # Push to production branch using the provided GITHUB_TOKEN (force)
+          git push --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" HEAD:production
+
+      - name: Deploy success notification
+        if: success()
+        run: |
+          echo "Deploy ke branch production berhasil!"
