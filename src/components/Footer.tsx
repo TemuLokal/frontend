@@ -46,9 +46,9 @@ function Footer() {
             <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Kontak</h4>
             <ul className="space-y-1 sm:space-y-2">
               {[
-                { icon: '/mail.svg', text: 'info@temulokal.id', link: '#email' },
-                { icon: '/phone-call.svg', text: '+62 812 3456 7890', link: '#telp' },
-                { icon: '/map-pin-2.svg', text: 'Jakarta, Indonesia.', link: '#lokasi' }
+                { icon: `${import.meta.env.BASE_URL}mail.svg`, text: 'info@temulokal.id', link: '#email' },
+                { icon: `${import.meta.env.BASE_URL}phone-call.svg`, text: '+62 812 3456 7890', link: '#telp' },
+                { icon: `${import.meta.env.BASE_URL}map-pin-2.svg`, text: 'Jakarta, Indonesia.', link: '#lokasi' }
               ].map((contact, index) => (
                 <li key={contact.text} className="flex items-center gap-2">
                   <img src={contact.icon} alt="icon" className="w-[12px] h-[12px] sm:w-[15px] sm:h-[15px] transition-transform duration-300 hover:scale-110" />

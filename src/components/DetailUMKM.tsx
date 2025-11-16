@@ -188,10 +188,10 @@ export default function DetailUMKM() {
 
                         <div className="flex flex-col gap-4 text-gray-700 p-6">
                             {[
-                                { icon: '/map-pin.svg', text: umkm.location },
-                                { icon: '/phone-brown.svg', text: '083121102304' },
-                                { icon: '/mail-brown.svg', text: 'kesyy28@gmail.com' },
-                                { icon: '/globe.svg', text: 'Website: -' }
+                                { icon: `${import.meta.env.BASE_URL}map-pin.svg`, text: umkm.location },
+                                { icon: `${import.meta.env.BASE_URL}phone-brown.svg`, text: '083121102304' },
+                                { icon: `${import.meta.env.BASE_URL}mail-brown.svg`, text: 'kesyy28@gmail.com' },
+                                { icon: `${import.meta.env.BASE_URL}globe.svg`, text: 'Website: -' }
                             ].map((item, index) => (
                                 <div key={index} className="flex items-center gap-4 transition-all duration-300 hover:text-[#730700]">
                                     <img src={item.icon} alt="icon" className="w-5 h-5 flex-shrink-0" />

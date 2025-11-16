@@ -24,7 +24,7 @@ export const articleList: Article[] = [
     description: "Pemerintah membuka program pendampingan gratis untuk UMKM yang ingin naik kelas dan memperluas pasar.",
     creator: "Muhammad Islami Kaffah",
     date: "13 Oktober 2025",
-    image: "/artikel1.webp",
+    image: import.meta.env.BASE_URL + "artikel1.webp",
     category: "Berita",
     content: "Kementerian Ketenagakerjaan kembali membuka pendaftaran bantuan UMKM 2025 melalui program Tenaga Kerja Mandiri (TKM) Pemula, TKM Lanjutan, dan Padat Karya pada pertenjamaaran Agustus 2025. Berikut petunjuk cara pendaftarannya dahulu.\n\nSedianya program TKM Pemula yang menerima pendaftaran hingga 22 Agustus kemarin. Sementara untuk program TKM Lanjutan buka hingga per 24 Agustus, sedangkan TKM Lanjutan 23 Agustus 2025.\n\nMeski begitu, menutut informasi dari instansi resmi Direktorat Bina Perusahaan Kesempatan Kerja, jati bimpinghk.kemenkumkm dan Padat Karya diperpanjang hingga 31 Agustus.",
     sections: [
@@ -71,7 +71,7 @@ export const articleList: Article[] = [
     description: "Tiga UMKM Indonesia berhasil meraih penghargaan di ajang kompetisi bisnis tingkat dunia.",
     creator: "Muhammad Islami Kaffah",
     date: "12 Oktober 2025",
-    image: "/artikel2.webp",
+    image: import.meta.env.BASE_URL + "artikel2.webp",
     category: "Berita",
     content: "Prestasi membanggakan telah diraih oleh tiga UMKM Indonesia dalam ajang kompetisi bisnis internasional. Ketiga perusahaan ini telah menunjukkan inovasi dan dedikasi yang luar biasa dalam mengembangkan produk dan layanan mereka.\n\nKompetisi tingkat dunia ini melibatkan ribuan peserta dari berbagai negara. Kemenangan ini membuktikan bahwa UMKM Indonesia memiliki potensi yang sangat besar untuk bersaing di pasar global.\n\nKeberhasilan ini diharapkan dapat menginspirasi UMKM lainnya untuk terus berinovasi dan meningkatkan kualitas produk mereka.",
     sections: [
@@ -91,7 +91,7 @@ export const articleList: Article[] = [
     description: "Strategi marketing digital yang terbukti efektif meningkatkan penjualan UMKM.",
     creator: "Admin",
     date: "10 Oktober 2025",
-    image: "/artikel3.webp",
+    image: import.meta.env.BASE_URL + "artikel3.webp",
     category: "Artikel",
     content: "Di era digital seperti sekarang, UMKM harus mengadopsi strategi pemasaran digital untuk tetap kompetitif. Berikut adalah beberapa tips yang telah terbukti efektif meningkatkan penjualan.\n\nStrategi pemasaran digital bukan lagi pilihan tetapi keharusan bagi bisnis yang ingin berkembang. Dengan memanfaatkan berbagai platform digital, UMKM dapat menjangkau pasar yang lebih luas dan meningkatkan penjualan mereka secara signifikan.",
     sections: [
@@ -133,7 +133,7 @@ export const articleList: Article[] = [
     description: "Dalam era digital seperti sekarang, pelaku usaha mikro, kecil, dan menengah wajib menguasai tools berikut.",
     creator: "Admin",
     date: "08 Oktober 2025",
-    image: "/artikel4.webp",
+    image: import.meta.env.BASE_URL + "artikel4.webp",
     category: "Artikel",
     content: "Teknologi telah mengubah cara bisnis beroperasi. UMKM yang ingin tetap relevan dan kompetitif harus menguasai berbagai tools digital. Berikut adalah tools penting yang wajib dipelajari oleh setiap UMKM di era digital ini.",
     sections: [

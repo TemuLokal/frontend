@@ -4,7 +4,7 @@ export const articleList = [{
         description: "Pemerintah membuka program pendampingan gratis untuk UMKM yang ingin naik kelas dan memperluas pasar.",
         creator: "Muhammad Islami Kaffah",
         date: "13 Oktober 2025",
-        image: "/artikel1.webp",
+        image: import.meta.env.BASE_URL + "artikel1.webp",
         category: "Berita"
     },
     {
@@ -13,7 +13,7 @@ export const articleList = [{
         description: "Tiga UMKM Indonesia berhasil meraih penghargaan di ajang kompetisi bisnis tingkat dunia.",
         creator: "Muhammad Islami Kaffah",
         date: "12 Oktober 2025",
-        image: "/artikel2.webp",
+        image: import.meta.env.BASE_URL + "artikel2.webp",
         category: "Berita"
     },
     {
@@ -22,7 +22,7 @@ export const articleList = [{
         description: "Strategi marketing digital yang terbukti efektif meningkatkan penjualan UMKM.",
         creator: "Admin",
         date: "10 Oktober 2025",
-        image: "/artikel3.webp",
+        image: import.meta.env.BASE_URL + "artikel3.webp",
         category: "Artikel"
     },
     {
@@ -31,7 +31,7 @@ export const articleList = [{
         description: "Dalam era digital seperti sekarang, pelaku usaha mikro, kecil, dan menengah wajib menguasai tools berikut.",
         creator: "Admin",
         date: "08 Oktober 2025",
-        image: "/artikel4.webp",
+        image: import.meta.env.BASE_URL + "artikel4.webp",
         category: "Artikel"
     }
 ];
