@@ -89,7 +89,7 @@ export default function Navbar() {
                 }}
               >
                     <span className="text-2xl sm:text-3xl text-black font-bold">
-                      Temu Lokal
+                      TemuLokal
                     </span>
               </Link>
           </div>
