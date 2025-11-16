@@ -1,9 +1,14 @@
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteBase /temulokal
-    RewriteRule ^index\.html$ - [L]
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME} !-l
-    RewriteRule . /index.html [L]
+Options -MultiViews
+RewriteEngine On
+
+RewriteBase /temulokal/
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+RewriteRule ^ index.html [L]
+
+<IfModule mod_headers.c>
+    Header set Cache-Control "no-store, no-cache, must-revalidate"
 </IfModule>
