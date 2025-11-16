@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar'
 import Home from './components/Home';
 import Chart from './components/Chart';
@@ -13,10 +13,11 @@ import Login from './components/Login';
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <div className="min-h-screen">
-        <Routes>
+    <Router>
+      <>
+        <Navbar />
+        <div className="min-h-screen">
+          <Routes>
           <Route path="/" element={
             <>
               <Home />
@@ -35,9 +36,10 @@ function App() {
           <Route path="/login" element={<Login /> } />
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <Footer />
-      </div>
-    </>
+          <Footer />
+        </div>
+      </>
+    </Router>
   )
 }
 
