@@ -8,7 +8,7 @@ function Home() {
   }, []);
 
   return (
-    <section id="beranda" className="relative px-4 sm:px-6 lg:px-8 bg-cover bg-center min-h-screen flex items-center" style={{ backgroundImage: "url('/hero.png')" }}>
+    <section id="beranda" className="relative px-4 sm:px-6 lg:px-8 bg-cover bg-center min-h-screen flex items-center" style={{ backgroundImage: `url('${import.meta.env.BASE_URL}hero.png')` }}>
       <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-black/50"></div>
       
       <div className="max-w-7xl mx-auto w-full pt-[80px] md:pt-0 relative z-10">

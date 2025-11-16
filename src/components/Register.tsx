@@ -31,8 +31,8 @@ function Register() {
                                 Nama Lengkap
                             </label>
                             <div className="relative group">
-                                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                    <img className="w-5 h-5 text-gray-400" src="/user.svg" />
+                                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <img className="w-5 h-5 text-gray-400" src={`${import.meta.env.BASE_URL}user.svg`} />
                                 </div>
                                 <input
                                     type="text"
@@ -47,8 +47,8 @@ function Register() {
                                 Email
                             </label>
                             <div className="relative group">
-                                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                    <img className="w-5 h-5 text-gray-400" src="/mail-brown.svg" />
+                                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <img className="w-5 h-5 text-gray-400" src={`${import.meta.env.BASE_URL}mail-brown.svg`} />
                                 </div>
                                 <input
                                     type="email"
@@ -63,8 +63,8 @@ function Register() {
                                 Password
                             </label>
                             <div className="relative group">
-                                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                    <img className="w-5 h-5 text-gray-400" src="/key.svg" />
+                                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <img className="w-5 h-5 text-gray-400" src={`${import.meta.env.BASE_URL}key.svg`} />
                                 </div>
                                 <input
                                     type={showPassword ? "text" : "password"}
@@ -95,8 +95,8 @@ function Register() {
                                 Konfirmasi Password
                             </label>
                             <div className="relative group">
-                                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                    <img className="w-5 h-5 text-gray-400" src="/key.svg" />
+                                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <img className="w-5 h-5 text-gray-400" src={`${import.meta.env.BASE_URL}key.svg`} />
                                 </div>
                                 <input
                                     type={showConfirmPassword ? "text" : "password"}
@@ -156,9 +156,9 @@ function Register() {
                     {/* Social Login */}
                     <div className="grid grid-cols-3 gap-4">
                         {[
-                            { name: 'Google', icon: '/google.svg', bg: 'bg-red-500 hover:bg-red-800' },
-                            { name: 'Apple', icon: '/apple.svg', bg: 'bg-gray-500 hover:bg-gray-800' },
-                            { name: 'Facebook', icon: '/facebook-solid.svg', bg: 'bg-blue-500 hover:bg-blue-800' }
+                            { name: 'Google', icon: `${import.meta.env.BASE_URL}google.svg`, bg: 'bg-red-500 hover:bg-red-800' },
+                            { name: 'Apple', icon: `${import.meta.env.BASE_URL}apple.svg`, bg: 'bg-gray-500 hover:bg-gray-800' },
+                            { name: 'Facebook', icon: `${import.meta.env.BASE_URL}facebook-solid.svg`, bg: 'bg-blue-500 hover:bg-blue-800' }
                         ].map((social, index) => (
                             <button
                                 key={social.name}

@@ -56,27 +56,27 @@ export default function DetailUMKM() {
                             </p>
                         </div>
 
-                        <div className="flex items-center gap-3 mb-8 animate-fade-in-up" style={{ animationDelay: '400ms' }}>
+                            <div className="flex items-center gap-3 mb-8 animate-fade-in-up" style={{ animationDelay: '400ms' }}>
                             <span className="bg-[#730700] text-white text-sm sm:text-base px-6 py-2 rounded-lg uppercase font-semibold shadow-lg">
                                 {umkm.category}
                             </span>
                             <div className="flex items-center gap-2 text-white text-sm sm:text-base font-semibold px-4 py-2">
                                 BUKA
-                                <img src="/check.svg" alt="icon" className="w-4 h-4" />
+                                <img src={`${import.meta.env.BASE_URL}check.svg`} alt="icon" className="w-4 h-4" />
                             </div>
                         </div>
 
                         <div className="flex flex-col gap-4 animate-fade-in-up" style={{ animationDelay: '600ms' }}>
                             <div className="flex items-center gap-4 text-base sm:text-lg">
-                                <img src="/phone.svg" alt="icon" className="w-5 h-5" />
+                                <img src={`${import.meta.env.BASE_URL}phone.svg`} alt="icon" className="w-5 h-5" />
                                 <span>083121102304</span>
                             </div>
                             <div className="flex items-center gap-4 text-base sm:text-lg">
-                                <img src="/map-pin-white.svg" alt="icon" className="w-5 h-5" />
+                                <img src={`${import.meta.env.BASE_URL}map-pin-white.svg`} alt="icon" className="w-5 h-5" />
                                 <span>{umkm.location}</span>
                             </div>
                             <div className="flex items-center gap-4 text-base sm:text-lg">
-                                <img src="/mail-white.svg" alt="icon" className="w-5 h-5" />
+                                <img src={`${import.meta.env.BASE_URL}mail-white.svg`} alt="icon" className="w-5 h-5" />
                                 <span>kesyy28@gmail.com</span>
                             </div>
                         </div>
@@ -92,7 +92,7 @@ export default function DetailUMKM() {
                                 BAGIKAN
                                 <div className="bg-white rounded-full p-3 flex items-center justify-center transition-transform duration-300 hover:scale-110">
                                     <img
-                                        src="/share-2.svg"
+                                        src={`${import.meta.env.BASE_URL}share-2.svg`}
                                         alt="icon"
                                         className="w-5 h-5 object-contain"
                                     />
@@ -216,7 +216,7 @@ export default function DetailUMKM() {
                     {/* Opening Hours */}
                     <div className="bg-white border border-[#E8E8EB] rounded-xl shadow-lg p-6">
                         <div className="flex items-center gap-3 mb-6">
-                            <img src="/clock.svg" alt="icon" className="w-5 h-5" />
+                            <img src={`${import.meta.env.BASE_URL}clock.svg`} alt="icon" className="w-5 h-5" />
                             <h3 className="font-bold text-black text-lg">Jam Operasional</h3>
                         </div>
                         <div className="flex flex-col gap-3 text-sm text-black">
@@ -244,7 +244,7 @@ export default function DetailUMKM() {
                     BAGIKAN
                     <div className="bg-white rounded-full p-2 flex items-center justify-center">
                         <img
-                            src="/share-2.svg"
+                            src={`${import.meta.env.BASE_URL}share-2.svg`}
                             alt="icon"
                             className="w-5 h-5 object-contain"
                         />

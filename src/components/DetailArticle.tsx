@@ -39,11 +39,11 @@ export default function DetailArticle() {
                                 {article.category}
                             </span>
                             <div className="flex items-center gap-2 text-gray-600">
-                                <img src="/user.svg" alt="Icon" className="w-5 h-5" />
+                                <img src={`${import.meta.env.BASE_URL}user.svg`} alt="Icon" className="w-5 h-5" />
                                 <span className="font-medium">{article.creator}</span>
                             </div>
                             <div className="flex items-center gap-2 text-gray-600">
-                                <img src="/calendar.svg" alt="Icon" className="w-5 h-5" />
+                                <img src={`${import.meta.env.BASE_URL}calendar.svg`} alt="Icon" className="w-5 h-5" />
                                 <span className="font-medium">{article.date}</span>
                             </div>
                         </div>

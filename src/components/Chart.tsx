@@ -64,7 +64,7 @@ function Chart({ widthPercent = 0.8, layout = "row" }: { widthPercent?: number; 
           {/* UMKM Terdaftar */}
           <div className={`flex-1 min-w-0 max-w-full flex flex-col items-center text-center py-2 sm:py-3 ${!isColumn ? 'border-b md:border-b-0 md:border-r border-gray-200 last:border-b-0 last:border-r-0' : 'border-b border-gray-200 last:border-b-0'} transition-all duration-300`}>
             <div className="flex items-center justify-center mb-2 sm:mb-3">
-              <img src="/bar-chart-2.svg" alt="icon" className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 xl:w-20 xl:h-20" />
+              <img src={`${import.meta.env.BASE_URL}bar-chart-2.svg`} alt="icon" className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 xl:w-20 xl:h-20" />
             </div>
             <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-1 text-gradient">
               {counts.umkm.toLocaleString()}
@@ -77,7 +77,7 @@ function Chart({ widthPercent = 0.8, layout = "row" }: { widthPercent?: number; 
           {/* UMKM Aktif */}
           <div className={`flex-1 min-w-0 max-w-full flex flex-col items-center text-center py-2 sm:py-3 ${!isColumn ? 'border-b md:border-b-0 md:border-r border-gray-200 last:border-b-0 last:border-r-0' : 'border-b border-gray-200 last:border-b-0'} transition-all duration-300`}>
             <div className="flex items-center justify-center mb-2 sm:mb-3">
-              <img src="/shopping-bag.svg" alt="icon" className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 xl:w-20 xl:h-20" />
+              <img src={`${import.meta.env.BASE_URL}shopping-bag.svg`} alt="icon" className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 xl:w-20 xl:h-20" />
             </div>
             <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-1 text-gradient">
               {counts.aktif.toLocaleString()}
@@ -90,7 +90,7 @@ function Chart({ widthPercent = 0.8, layout = "row" }: { widthPercent?: number; 
           {/* Daerah di Indonesia */}
           <div className="flex-1 min-w-0 max-w-full flex flex-col items-center text-center py-2 sm:py-3 transition-all duration-300">
             <div className="flex items-center justify-center mb-2 sm:mb-3">
-              <img src="/map.svg" alt="icon" className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 xl:w-20 xl:h-20" />
+              <img src={`${import.meta.env.BASE_URL}map.svg`} alt="icon" className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 xl:w-20 xl:h-20" />
             </div>
             <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-1 text-gradient">
               {counts.daerah}

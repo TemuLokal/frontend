@@ -67,7 +67,7 @@ function Article() {
                 
                 <div className="flex items-center gap-2 mb-2 mt-2">
                   <img
-                    src="/user.svg"
+                    src={`${import.meta.env.BASE_URL}user.svg`}
                     alt="icon"
                     className="w-3 h-3 sm:w-4 sm:h-4"
                   />
@@ -78,7 +78,7 @@ function Article() {
 
                 <div className="flex items-center gap-2 mb-3 sm:mb-4">
                   <img
-                    src="/calendar.svg"
+                    src={`${import.meta.env.BASE_URL}calendar.svg`}
                     alt="icon"
                     className="w-3 h-3 sm:w-4 sm:h-4"
                   />

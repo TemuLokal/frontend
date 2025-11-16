@@ -9,7 +9,7 @@ export default function NotFound() {
           {/*  Illustration/image */}
           <div className="flex items-center justify-center">
             <div className="w-full max-w-md">
-              <img src="/404.svg" alt="404 illustration" className="w-full h-auto" />
+              <img src={`${import.meta.env.BASE_URL}404.svg`} alt="404 illustration" className="w-full h-auto" />
             </div>
           </div>
           {/* Left */}
