@@ -127,7 +127,7 @@ function UMKM() {
                   </div>
 
                   <Link
-                    to={`/umkm/${umkm.id}`}
+                    to={`/umkm/${umkm.slug}`}
                     className="bg-white border border-[#730700] text-center text-xs sm:text-sm text-[#730700] font-semibold rounded-[10px] py-3 transition-all duration-300 hover:bg-[#730700] hover:text-white hover:shadow-lg block"
                   >
                     Lihat Detail
@@ -146,12 +146,12 @@ function UMKM() {
 
         {/* Tombol Lihat Semua */}
         <div className="flex justify-center mt-8 sm:mt-10 animate-fade-in-up" style={{ animationDelay: '800ms' }}>
-          <Link
-            to="/umkm"
+          <a
+            href="#umkm"
             className="bg-[#730700] hover:bg-[#5a0500] text-white font-bold px-6 py-2 sm:px-10 sm:py-3 rounded-lg text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Lihat Semua UMKM
-          </Link>
+          </a>
         </div>
       </div>
     </section>
