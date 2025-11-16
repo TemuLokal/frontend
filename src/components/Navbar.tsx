@@ -122,12 +122,12 @@ export default function Navbar() {
           </div>
         </div>
         <div className="hidden md:flex items-center space-x-4">
-          <a
-            href="/login"
+          <Link
+            to="/login"
             className="bg-gradient-to-r from-[#730700] to-[#b33b3b] text-white px-4 py-2 lg:px-6 lg:py-3 rounded-[10px] text-sm hover-lift transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             MASUK
-          </a>
+          </Link>
         </div>
 
         {/* Hamburger Button (Mobile) */}
@@ -203,12 +203,12 @@ export default function Navbar() {
           ))}
 
           <div className="px-2 py-2">
-            <a
-              href="/login"
+            <Link
+              to="/login"
               className="bg-gradient-to-r from-[#730700] to-[#b33b3b] text-white px-6 py-3 rounded-[10px] text-sm hover-lift w-full block text-center transition-all duration-300 shadow-lg"
             >
               MASUK
-            </a>
+            </Link>
           </div>
         </div>
       </div>
