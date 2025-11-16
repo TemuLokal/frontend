@@ -4,7 +4,7 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8">
           <div className="animate-fade-in-left">
-            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Temu Lokal - 2025</h3>
+            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">TemuLokal</h3>
             <p className="text-[#B8B8B8] text-sm sm:text-base">Platform marketplace untuk mendukung dan mempromosikan UMKM lokal Indonesia.</p>
           </div>
           
@@ -66,7 +66,7 @@ function Footer() {
         </div>
         
         <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#777777] text-center text-white text-sm sm:text-base animate-fade-in-up">
-          <p>&copy; 2025 Temu Lokal. Semua hak dilindungi.</p>
+          <p>&copy; 2025 TemuLokal. Semua hak dilindungi.</p>
         </div>
       </div>
     </footer>
