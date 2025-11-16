@@ -3,9 +3,12 @@ function Footer() {
     <footer id="footer" className="bg-gradient-to-r from-[#730700] to-[#b33b3b] text-white py-8 sm:py-12 animate-fade-in-up">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8">
-          <div className="animate-fade-in-left">
-            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">TemuLokal</h3>
-            <p className="text-[#B8B8B8] text-sm sm:text-base">Platform marketplace untuk mendukung dan mempromosikan UMKM lokal Indonesia.</p>
+          <div className="animate-fade-in-left flex items-center gap-4">
+            <img src={`${import.meta.env.BASE_URL}icon_temulokal.png`} alt="TemuLokal" className="w-14 h-14 sm:w-16 sm:h-16 object-contain" />
+            <div>
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">TemuLokal</h3>
+              <p className="text-[#B8B8B8] text-sm sm:text-base">Platform marketplace untuk mendukung dan mempromosikan UMKM lokal Indonesia.</p>
+            </div>
           </div>
           
           <div className="animate-fade-in-left" style={{ animationDelay: '100ms' }}>

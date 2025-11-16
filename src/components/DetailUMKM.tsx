@@ -207,7 +207,7 @@ export default function DetailUMKM() {
                                     key={social}
                                     className="flex justify-center items-center w-10 h-10 rounded-lg bg-[#730700] transition-all duration-300 hover:bg-[#5a0500] hover:scale-110 cursor-pointer"
                                 >
-                                    <img src={`/${social}.svg`} alt={social} className="w-5 h-5" />
+                                    <img src={`${import.meta.env.BASE_URL}${social}.svg`} alt={social} className="w-5 h-5" />
                                 </div>
                             ))}
                         </div>
