@@ -4,14 +4,12 @@ import { umkmList } from "../data/umkmList";
 import NotFound from "./NotFound";
 
 export default function DetailUMKM() {
-    const { id } = useParams();
-    const umkm = umkmList.find((item) => item.id === parseInt(id || ""));
-
+    const { slug } = useParams();
+    const umkm = umkmList.find((item) => item.slug === slug);
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
-
-    }, [id]);
+    }, [slug]);
 
     const handleShare = async () => {
         const shareData = {
@@ -56,7 +54,7 @@ export default function DetailUMKM() {
                             </p>
                         </div>
 
-                            <div className="flex items-center gap-3 mb-8 animate-fade-in-up" style={{ animationDelay: '400ms' }}>
+                        <div className="flex items-center gap-3 mb-8 animate-fade-in-up" style={{ animationDelay: '400ms' }}>
                             <span className="bg-[#730700] text-white text-sm sm:text-base px-6 py-2 rounded-lg uppercase font-semibold shadow-lg">
                                 {umkm.category}
                             </span>
@@ -81,7 +79,7 @@ export default function DetailUMKM() {
                             </div>
                         </div>
                     </div>
-                    
+
                     {/* Share Button */}
                     <div className={`hidden md:block transition-all duration-1000 animate-fade-in-up`} style={{ animationDelay: '600ms' }}>
                         <div className="bg-[#730700]/50 w-fit h-fit p-2 rounded-full hover:bg-[#730700]/70 transition-all duration-300 hover:scale-105">
@@ -144,28 +142,33 @@ export default function DetailUMKM() {
                             </h2>
                         </div>
                         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                            {umkm.gallery?.map((img, i) => (
-                                <div key={i} className="group cursor-pointer">
-                                    <div className="rounded-lg overflow-hidden shadow-md transition-all duration-300 group-hover:shadow-xl group-hover:scale-105">
-                                        <img
-                                            src={img}
-                                            alt={`foto-${i}`}
-                                            className="w-full h-32 sm:h-40 object-cover transition-transform duration-300 group-hover:scale-110"
-                                        />
-                                    </div>
-                                </div>
-                            ))}
-
-                            {!umkm.gallery && (
-                                <>
-                                    {[1, 2, 3, 4].map((num) => (
-                                        <div key={num} className="group cursor-pointer">
-                                            <div className="bg-gray-200 rounded-lg h-32 sm:h-40 flex items-center justify-center transition-all duration-300 group-hover:bg-gray-300 group-hover:shadow-lg">
-                                                <span className="text-gray-500 font-semibold">Foto {num}</span>
-                                            </div>
+                            {umkm.gallery && umkm.gallery.length > 0 ? (
+                                umkm.gallery.map((img, i) => (
+                                    <div key={i} className="group cursor-pointer">
+                                        <div className="rounded-lg overflow-hidden shadow-md transition-all duration-300 group-hover:shadow-xl group-hover:scale-105">
+                                            <img
+                                                src={img}
+                                                alt={`Galeri ${i + 1} - ${umkm.name}`}
+                                                className="w-full h-32 sm:h-40 object-cover transition-transform duration-300 group-hover:scale-110"
+                                                onError={(e) => {
+                                                    e.currentTarget.src = `${import.meta.env.BASE_URL}placeholder.webp`;
+                                                }}
+                                            />
                                         </div>
-                                    ))}
-                                </>
+                                    </div>
+                                ))
+                            ) : (
+                                Array.from({ length: 4 }, (_, i) => (
+                                    <div key={i} className="group cursor-pointer">
+                                        <div className="rounded-lg overflow-hidden shadow-md transition-all duration-300 group-hover:shadow-xl group-hover:scale-105">
+                                            <img
+                                                src={`${import.meta.env.BASE_URL}placeholder.webp`}
+                                                alt={`Placeholder galeri ${i + 1}`}
+                                                className="w-full h-32 sm:h-40 object-cover transition-transform duration-300 group-hover:scale-110"
+                                            />
+                                        </div>
+                                    </div>
+                                ))
                             )}
                         </div>
                     </div>
@@ -174,7 +177,7 @@ export default function DetailUMKM() {
                 {/* Sidebar */}
                 <div className="flex flex-col gap-6 w-full lg:w-80">
                     <h3 className="font-bold text-black text-lg sm:text-xl">Lokasi / Kontak Usaha :</h3>
-                    
+
                     {/* Map Card */}
                     <div className="bg-white border border-[#E8E8EB] rounded-xl shadow-lg overflow-hidden">
                         <div className="w-full aspect-video overflow-hidden">
@@ -199,11 +202,11 @@ export default function DetailUMKM() {
                                 </div>
                             ))}
                         </div>
-                        
+
                         {/* Social Media */}
                         <div className="flex gap-3 px-6 pb-6 flex-wrap">
                             {['facebook', 'twitter', 'instagram', 'whatsapp'].map((social, index) => (
-                                <div 
+                                <div
                                     key={social}
                                     className="flex justify-center items-center w-10 h-10 rounded-lg bg-[#730700] transition-all duration-300 hover:bg-[#5a0500] hover:scale-110 cursor-pointer"
                                 >
@@ -221,8 +224,8 @@ export default function DetailUMKM() {
                         </div>
                         <div className="flex flex-col gap-3 text-sm text-black">
                             {["Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu", "Minggu"].map((day, index) => (
-                                <div 
-                                    key={day} 
+                                <div
+                                    key={day}
                                     className="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0 transition-all duration-300 hover:bg-gray-50 hover:px-3 hover:rounded-lg"
                                     style={{ animationDelay: `${index * 50}ms` }}
                                 >
