@@ -89,10 +89,7 @@ export default function Navbar() {
                 }}
                 className="flex items-center"
               >
-                <img src={`${import.meta.env.BASE_URL}icon_temulokal.png`} alt="TemuLokal" className="w-10 h-10 sm:w-12 sm:h-12 mr-3 object-contain" />
-                <span className="text-2xl sm:text-3xl text-black font-bold">
-                  TemuLokal
-                </span>
+                <img src={`${import.meta.env.BASE_URL}icon_temulokal.png`} alt="TemuLokal" className="w-14 h-14 sm:w-18 sm:h-18 mr-3 object-contain" />
               </Link>
           </div>
 

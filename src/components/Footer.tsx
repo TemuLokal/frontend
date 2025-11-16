@@ -4,9 +4,8 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8">
           <div className="animate-fade-in-left flex items-center gap-4">
-            <img src={`${import.meta.env.BASE_URL}icon_temulokal.png`} alt="TemuLokal" className="w-14 h-14 sm:w-16 sm:h-16 object-contain" />
             <div>
-              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">TemuLokal</h3>
+              <img src={`${import.meta.env.BASE_URL}icon_temulokal.png`} alt="TemuLokal" className="w-20 h-20 sm:w-30 sm:h-30 object-contain" />
               <p className="text-[#B8B8B8] text-sm sm:text-base">Platform marketplace untuk mendukung dan mempromosikan UMKM lokal Indonesia.</p>
             </div>
           </div>
