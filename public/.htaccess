@@ -1,5 +1,6 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  RewriteBase /temulokal/
 
   # Serve existing files normally
   RewriteCond %{REQUEST_FILENAME} -f [OR]
