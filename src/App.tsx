@@ -27,7 +27,7 @@ function App() {
               <Article />
             </>
           } />
-          <Route path="/umkm/:id" element={<DetailUMKM />} />
+          <Route path="/umkm/:slug" element={<DetailUMKM />} />
           <Route path="/umkm" element={<UMKM />} />
           <Route path="/article/:id" element={<DetailArticle />} />
           <Route path="/article" element={<Article />} />
