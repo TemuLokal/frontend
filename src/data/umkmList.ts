@@ -1,5 +1,6 @@
 interface UMKM {
   id: number;
+  slug: string;
   name: string;
   category: string;
   location: string;
@@ -15,6 +16,7 @@ interface UMKM {
 export const umkmList: UMKM[] = [
   {
     id: 1,
+    slug: "budidaya-pembibitan-lada",
     name: "Budidaya Pembibitan Lada",
     category: "Pertanian",
     location: "Bekasi, Jawa Barat (4 km)",
@@ -27,6 +29,7 @@ export const umkmList: UMKM[] = [
   },
   {
     id: 2,
+    slug: "kripik-singkong-pak-mul",
     name: "Kripik Singkong Pak Mul",
     category: "Jajanan",
     location: "Tangerang, Banten (28 km)",
@@ -39,6 +42,7 @@ export const umkmList: UMKM[] = [
   },
   {
     id: 3,
+    slug: "chaa-risoles",
     name: "Chaa Risoles",
     category: "Jajanan",
     location: "Bandung, Jawa Barat (130 km)",
@@ -51,6 +55,7 @@ export const umkmList: UMKM[] = [
   },
   {
     id: 4,
+    slug: "sahabat-autoparts-service",
     name: "Sahabat Autoparts Service",
     category: "Bengkel",
     location: "Maroswali, Sulawesi Tengah",
@@ -63,6 +68,7 @@ export const umkmList: UMKM[] = [
   },
   {
     id: 5,
+    slug: "batik-nusantara",
     name: "Batik Nusantara",
     category: "Pakaian",
     location: "Yogyakarta, DIY (520 km)",
@@ -75,6 +81,7 @@ export const umkmList: UMKM[] = [
   },
   {
     id: 6,
+    slug: "tas-kulit-bandoeng",
     name: "Tas Kulit Bandoeng",
     category: "Aksesoris",
     location: "Bandung, Jawa Barat (130 km)",
@@ -87,6 +94,7 @@ export const umkmList: UMKM[] = [
   },
   {
     id: 7,
+    slug: "bali-keramik-creative",
     name: "Bali Keramik Creative",
     category: "Kerajinan",
     location: "Ubud, Bali (1100 km)",
@@ -99,6 +107,7 @@ export const umkmList: UMKM[] = [
   },
   {
     id: 8,
+    slug: "tenunin-flores",
     name: "Tenunin Flores",
     category: "Kerajinan",
     location: "Flores, NTT (1500 km)",
