@@ -34,8 +34,8 @@ jobs:
 
       - name: Build React app
         run: |
-          npm run build         # CRA / Vite / Remix
-          # Next.js → npm run build && npm run export  (kalau static export)
+          npm ci
+          npm run build -- --base=/temulokal/
         env:
           VITE_SOME_KEY: ${{ secrets.VITE_SOME_KEY }}
           REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
